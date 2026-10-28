@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Non-Standard Machine Skill & Work Readiness Matrix</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#e9eef6;--panel:#fff;--ink:#102a52;--mute:#5d6f8b;--line:#cfd9e8;--navy:#0b2a5b;--navy2:#123c7c;--eqh:#eaf1fc;--row:#f6f9ff;--yel:#ffd21f;
+--t0:#0b9a4a;--t1:#f9c70c;--t2:#f26a0f;--t3:#e1262c;--c0:#0a8a47;--c1:#8c7800;--c2:#e0600a;--c3:#d4202a;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1624;--panel:#132238;--ink:#e4ecf7;--mute:#9fb2cc;--line:#28405f;--navy:#0a1d3d;--navy2:#14335f;--eqh:#17304f;--row:#101d31;--c0:#3fd486;--c1:#f2cf3a;--c2:#ff914a;--c3:#ff6b6f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1624;--panel:#132238;--ink:#e4ecf7;--mute:#9fb2cc;--line:#28405f;--navy:#0a1d3d;--navy2:#14335f;--eqh:#17304f;--row:#101d31;--c0:#3fd486;--c1:#f2cf3a;--c2:#ff914a;--c3:#ff6b6f;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 14px/1.4 "Noto Sans Thai","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+main{max-width:1500px;margin:0 auto;padding:12px}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--yel);outline-offset:2px}
+.banner{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;border-radius:14px 14px 0 0;padding:14px 18px}
+.brand{display:flex;gap:14px;align-items:center}
+h1{margin:0;font-size:clamp(1.1rem,2.1vw,1.55rem);font-weight:800;letter-spacing:.01em;line-height:1.15}
+.sub{margin:4px 0 0;color:var(--yel);font-weight:700;font-size:clamp(.95rem,1.8vw,1.2rem)}
+.legend{background:#fff;color:#12284c;border-radius:10px;padding:8px 14px;text-align:center}
+.legend b{display:block;font-size:.85rem;letter-spacing:.02em}
+.legend div{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;font-size:.78rem;margin-top:4px}
+.legend span{display:flex;align-items:center;gap:5px;white-space:nowrap}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.bar{display:flex;gap:8px;justify-content:flex-end;padding:8px 0}
+.btn{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 12px;font-weight:500}
+.btn:hover{border-color:var(--navy2)}
+.btn.pri{background:var(--navy2);border-color:var(--navy2);color:#fff}
+.wrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:0 0 0 0}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:1750px}
+th,td{padding:5px 6px;text-align:center;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+thead th{background:var(--navy);color:#fff;font-weight:700;font-size:.8rem;line-height:1.2;border-color:rgba(255,255,255,.14)}
+thead th.eq{background:var(--eqh);color:var(--navy2);font-size:.72rem;font-weight:700;min-width:62px;vertical-align:bottom;border-color:var(--line)}
+:root[data-theme="dark"] thead th.eq{color:#bcd3f2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) thead th.eq{color:#bcd3f2}}
+thead th.grp{background:var(--navy2)}
+thead svg{display:block;margin:0 auto 3px;opacity:.85}
+.nm{position:sticky;left:0;z-index:2;text-align:left;min-width:180px;background:var(--panel)}
+thead .nm{z-index:3;background:var(--navy);text-align:center}
+tbody tr:nth-child(even) td,tbody tr:nth-child(even) .nm{background:var(--row)}
+.nm b{display:block;font-size:.88rem;color:var(--navy2)}
+:root[data-theme="dark"] .nm b{color:#cfe0fa}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .nm b{color:#cfe0fa}}
+.nm i{font-style:normal;font-size:.76rem;color:var(--mute)}
+td.pc{font-weight:800;font-size:.95rem;cursor:pointer}
+td.pc:hover{background:var(--eqh)}
+.c0{color:var(--c0)}.c1{color:var(--c1)}.c2{color:var(--c2)}.c3{color:var(--c3)}
+td.ov{font-weight:800;font-size:1rem}
+.pf svg{display:block;margin:auto}
+.st{display:inline-flex;align-items:center;gap:6px;min-width:104px;justify-content:center;padding:5px 10px;border-radius:6px;color:#fff;font-weight:700;font-size:.82rem}
+.st.t1{color:#3a2f00}
+.st.t0{background:var(--t0)}.st.t1{background:var(--t1)}.st.t2{background:var(--t2)}.st.t3{background:var(--t3)}
+.foot{display:grid;grid-template-columns:minmax(220px,1fr) 3fr;gap:12px;margin-top:12px}
+.note,.team{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.note b{display:block;margin-bottom:4px}
+.note ul{margin:0;padding-left:18px;color:var(--mute);font-size:.82rem}
+.team h2{margin:-24px 0 10px;display:inline-block;background:var(--navy2);color:#fff;font-size:.78rem;padding:3px 16px;border-radius:12px}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.kp div{text-align:center;color:var(--mute);font-size:.8rem}
+.kp strong{display:block;font-size:1.6rem;line-height:1.2}
+dialog{border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);padding:0;width:min(520px,calc(100vw - 24px))}
+dialog::backdrop{background:rgba(5,12,24,.55)}
+.dlg{padding:18px;display:grid;gap:12px;max-height:80vh;overflow:auto}
+.dlg h2{margin:0;font-size:1.05rem}
+.dlg p{margin:0;color:var(--mute)}
+.dlg ol{margin:0;padding-left:22px}
+.dlg label{display:grid;gap:4px;font-size:.88rem;color:var(--mute)}
+input[type=text],input[type=number]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px;width:100%}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.acts{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--navy2);color:#fff;padding:8px 14px;border-radius:6px;font-size:.88rem;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+@media (max-width:720px){.foot{grid-template-columns:1fr}.team h2{margin-top:0}}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+.btn[hidden]{display:none}
+thead th.eq img{display:block;margin:0 auto 4px;max-width:56px;max-height:48px;object-fit:contain}
+.im{display:block;width:100%;min-height:44px;background:var(--panel);border:1px dashed var(--line);border-radius:6px;padding:2px;margin-bottom:4px}
+.im img{margin:0 auto}
+.en,.in{font:inherit;font-size:.8rem;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:4px 6px;width:100%}
+.en{text-align:center;font-size:.72rem}
+.in.sm{margin-top:4px;font-size:.74rem}
+.pi{font:inherit;font-weight:800;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:4px 2px}
+.pi.c0{color:var(--c0)}.pi.c1{color:var(--c1)}.pi.c2{color:var(--c2)}.pi.c3{color:var(--c3)}
+.x{border:0;background:none;color:var(--c3);font-weight:700;padding:2px 6px;line-height:1}
+.nm .x{position:absolute;top:2px;right:2px}
+.toast.act{pointer-events:auto}
+.ub{margin-left:10px;background:none;border:1px solid #fff;color:#fff;border-radius:4px;padding:1px 8px}
+.pi{width:76px;-moz-appearance:textfield}
+.pi::-webkit-outer-spin-button,.pi::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.ed thead th.eq{min-width:92px}
+.bar{justify-content:space-between;flex-wrap:wrap;align-items:flex-end}
+.tabs,.tools{display:flex;gap:8px;flex-wrap:wrap}
+.tabs .btn[aria-pressed="true"]{background:var(--navy2);border-color:var(--navy2);color:#fff}
+.rk{display:flex;flex-wrap:wrap;gap:6px 10px;margin:0 0 12px;font-size:.78rem;color:var(--mute)}
+.kc{display:inline-flex;align-items:center;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:2px 8px}
+.kc img{height:18px;width:auto}.kc b{color:var(--ink)}
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.rc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;display:grid;gap:4px;justify-items:center}
+.rc:hover{border-color:var(--navy2)}
+.rc h3{margin:0;font-size:.98rem}
+.rc i{font-style:normal;font-size:.76rem;color:var(--mute)}
+.rc svg{max-width:100%;height:auto}
+.rs{display:flex;gap:10px;align-items:center}.rs strong{font-size:1.2rem}
+.rc small{color:var(--mute)}
+.note textarea{width:100%;min-height:110px;font:inherit;font-size:.82rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px;margin-top:6px}
+.note .btn{padding:2px 8px;font-size:.76rem;margin-left:8px}
+#rd{width:min(640px,calc(100vw - 24px))}
+#rd svg{display:block;margin:auto;max-width:100%;height:auto}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="mc" viewBox="0 0 24 24"><path fill="currentColor" d="M3 20h18v1.5H3zM5 18V9l4-2V4h6v3l4 2v9h-2v-7l-2-1v8H9v-8l-2 1v7zM11 6v2h2V6z"/></symbol>
+ <symbol id="ic0" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#fff"/><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="#0b7a3c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="ic1" viewBox="0 0 20 20"><circle cx="10" cy="6.5" r="3.4" fill="currentColor"/><path d="M3 18c0-4 3-6 7-6s7 2 7 6z" fill="currentColor"/></symbol>
+ <symbol id="ic2" viewBox="0 0 20 20"><path d="M10 3L1 8l9 5 7-3.9V14h1.5V8z" fill="currentColor"/><path d="M4.5 11.5v3.2c1.5 1.3 3.4 2 5.5 2s4-.7 5.5-2v-3.2L10 14.5z" fill="currentColor"/></symbol>
+ <symbol id="ic3" viewBox="0 0 20 20"><path d="M10 2L1 18h18z" fill="#fff"/><path d="M9.2 7.5h1.6v5h-1.6zM9.2 13.8h1.6v1.6H9.2z" fill="#e1262c"/></symbol>
+</svg>
+<main>
+ <section class="banner">
+  <div class="brand">
+   <svg width="54" height="54" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M19.4 13a7.6 7.6 0 000-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 00-1.7-1L15 3h-4l-.4 2.9c-.6.3-1.2.6-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 000 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1L11 21h4l.4-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5zM13 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></svg>
+   <div><h1>Non-Standard MACHINE SKILL &amp; WORK READINESS MATRIX</h1><p class="sub" id="sub"></p></div>
+  </div>
+  <div class="legend"><b>WORK READINESS STATUS</b><div id="lg"></div></div>
+ </section>
+ <div class="bar">
+  <div class="tabs"><button class="btn" id="tM" aria-pressed="true">Skill Matrix</button><button class="btn" id="tR" aria-pressed="false">Radar Cards</button></div>
+  <div class="tools">
+  <button class="btn" id="bEdit">✎ Edit</button>
+  <button class="btn" id="bAddP" hidden>+ Technician</button>
+  <button class="btn" id="bAddM" hidden>+ Machine</button>
+  <button class="btn" id="bCfg">⚙ Config</button>
+  <button class="btn" id="bTheme">◐ Theme</button>
+  <button class="btn pri" id="bPng">▧ Export PNG</button>
+  </div>
+ </div>
+ <div class="wrap" id="vM"><table id="tbl"></table></div>
+ <section id="vR" hidden><div class="rk" id="rk"></div><div class="rg" id="rg"></div></section>
+ <section class="foot">
+  <div class="note"><b>Note: <button class="btn" id="bNote">✎ Edit note</button></b><ul id="nl"></ul><textarea id="nT" hidden aria-label="Note, one line per bullet" placeholder="One line per bullet"></textarea></div>
+  <div class="team"><h2>TEAM SUMMARY</h2><div class="kp" id="kp"></div></div>
+ </section>
+</main>
+
+<dialog id="dtl"><div class="dlg"><h2 id="dT"></h2><p id="dS"></p><ol id="dL"></ol><div class="acts"><span></span><button class="btn" id="dX">Close</button></div></div></dialog>
+<dialog id="cfg"><div class="dlg">
+ <h2>Config</h2>
+ <label>Subtitle<input type="text" id="fSub"></label>
+ <div class="row3">
+  <label>Ready ≥ (%)<input type="number" id="fR" min="1" max="100"></label>
+  <label>Supervised ≥ (%)<input type="number" id="fS" min="1" max="100"></label>
+  <label>Training ≥ (%)<input type="number" id="fT" min="1" max="100"></label>
+ </div>
+ <div class="acts"><span><button class="btn" id="cReset">Reset settings</button> <button class="btn" id="cData">Restore Excel data</button></span><span><button class="btn" id="cCancel">Cancel</button> <button class="btn pri" id="cSave">Save</button></span></div>
+</div></dialog>
+<dialog id="pv"><div class="dlg"><h2>Matrix image</h2><p>Right-click (or long-press) the image and choose Save image.</p><div style="overflow:auto;max-height:60vh"><img id="pvI" alt="Skill matrix" style="max-width:none;width:1400px"></div><div class="acts"><span></span><button class="btn" onclick="document.getElementById('pv').close()">Close</button></div></div></dialog>
+<dialog id="rd"><div class="dlg"><h2 id="rdT"></h2><div id="rdS"></div><div id="rdV"></div><div class="acts"><span></span><button class="btn" onclick="document.getElementById('rd').close()">Close</button></div></div></dialog>
+<input type="file" id="fImg" accept="image/*" hidden>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var D0={"eq":["ENG无源贴装 1.0","ENG无源贴装 2.0~3.0","猎奇无源贴装 1.0","猎奇无源贴装 2.0","猎奇热沉贴装","猎奇封盖封装","猎奇治具组装","创凯封盖封装1.0","创凯封盖封装2.0","创凯备料机","轴心封盖封装","轴心点胶机","恒旭备料机","因斯特备料机","玖物移栽","ENG 备料机","创凯SN绑批","光驰SN绑批"],"p":[{"n":"何杰","id":"E22G74","j":"2022-03-17","v":[0.8235,0.8125,0.7778,0.8125,0.8235,0.8235,0.6667,0.7778,0.7368,0.7857,0.8235,0.8235,0.8235,0.7273,0.5833,0.1667,0.8235,0.8235],"d":[[14,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[13,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[14,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[13,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n参数精度确认"],[14,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[14,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[6,9,"流线报警处理\n吸盘更换\n转移位置设置\n吸取异常处理\n光源调节与设置\n视觉判定异常处理方式"],[14,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[14,19,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[11,14,"设置tray盘&治具矩阵位置\n取放料位置更改\n更换吸嘴&中转\n吸嘴校准\n取放料异常处理方式\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[14,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[12,16,"设置治具矩阵位置\n点胶位置更改\n更换胶水\n胶水&测高校准\n点胶异常处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[7,10,"设置tray盘矩阵位置\n取放料位置更改\n吸嘴更换\n取放料异常处理方式\n拍边异常处理方式\n光源调节与设置\n参数精度确认"],[8,11,"设置tray盘矩阵位置\n取放料位置更改\n料笼上下料层高设置\n吸嘴更换\n取放料异常处理方式\n光源调节与设置\n切机流程操作\n参数精度确认"],[7,12,"设置琴键&鱼骨矩阵位置\n取放料位置更改\n料笼上下料层高设置\n取放料异常处理方式\n琴键&鱼骨转移异常处理\n光源调节与设置\nMark识别异常处理方式"],null,null,null]},{"n":"汪海林","id":"T18551","j":"2020-11-12","v":[0.8235,0.8125,0.6111,0.75,0.75,0.75,0.75,0.7222,0.6842,0.7143,0.8235,0.75,0.7,0.7273,0.75,0.1667,0.25,0.8235],"d":[[14,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[13,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[11,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n参数精度确认"],[12,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[11,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n参数精度确认"],[11,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n参数精度确认"],[6,9,"流线报警处理\n吸盘更换\n转移位置设置\n吸取异常处理\n光源调节与设置\n视觉判定异常处理方式"],[13,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[13,19,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[10,14,"设置tray盘&治具矩阵位置\n取放料位置更改\n更换吸嘴&中转\n吸嘴校准\n取放料异常处理方式\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[14,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[12,16,"设置治具矩阵位置\n点胶位置更改\n更换胶水\n胶水&测高校准\n点胶异常处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\nMark程序搭建\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[7,10,"设置tray盘矩阵位置\n取放料位置更改\n吸嘴更换\n取放料异常处理方式\n拍边异常处理方式\n光源调节与设置\n参数精度确认"],[8,11,"设置tray盘矩阵位置\n取放料位置更改\n料笼上下料层高设置\n吸嘴更换\n取放料异常处理方式\n光源调节与设置\n切机流程操作\n参数精度确认"],[9,12,"设置琴键&鱼骨矩阵位置\n取放料位置更改\n料笼上下料层高设置\n吸嘴更换校准\n取放料异常处理方式\n琴键&鱼骨转移异常处理\n光源调节与设置\nMark识别异常处理方式\n参数精度确认"],null,null,null]},{"n":"沈得壯","id":"E257KB","j":"2025-10-24","v":[0.8235,0.8125,0.6111,0.75,0.75,0.75,0.6667,0.7222,0.6842,0.7143,0.8235,0.75,0.7,0.7273,0.75,0.1667,0.25,0.8235],"d":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},{"n":"Jakkapun Chingchai","id":"C254KB","j":"2025-06-04","v":[0.7647,0.75,0.75,0.75,0.75,0.75,0.0,0.7222,0.6842,0.6429,0.7647,0.75,0.75,0.5,0.25,0.0,0.75,0.75],"d":[[13,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[12,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[12,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[8,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n取放料异常处理方式\n点胶异常的处理方式\n光源调节与设置\n参数精度确认"],[10,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n参数精度确认"],[12,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[5,9,"设备作业流程\n开关机流程\n安全操作规范\n流线报警处理\n吸取异常处理"],[13,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[13,19,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[9,14,"设置tray盘&治具矩阵位置\n取放料位置更改\n更换吸嘴&中转\n吸嘴校准\n取放料异常处理方式\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[13,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[10,16,"设置治具矩阵位置\n点胶位置更改\n更换胶水\n胶水&测高校准\n点胶异常处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[6,10,"设置tray盘矩阵位置\n吸嘴更换\n取放料异常处理方式\n拍边异常处理方式\n光源调节与设置\n参数精度确认"],[4,11,"设备作业流程\n开关机流程\n安全操作规范\n吸嘴更换"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Phalaphol Charoensuk","id":"C2555C","j":"2025-06-11","v":[0.75,0.75,0.75,0.75,0.75,0.75,0.0,0.75,0.6316,0.6429,0.7059,0.75,0.75,0.3636,0.25,0.1667,0.25,0.25],"d":[[11,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作"],[9,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[9,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[6,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n取放料异常处理方式\n光源调节与设置"],[10,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n参数精度确认"],[9,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[0,9,"No skill items listed"],[12,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[12,19,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[6,14,"设置tray盘&治具矩阵位置\n取放料位置更改\n更换吸嘴&中转\n吸嘴校准\n取放料异常处理方式\n光源调节与设置"],[12,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[10,16,"设置治具矩阵位置\n点胶位置更改\n更换胶水\n胶水&测高校准\n点胶异常处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[5,10,"设置tray盘矩阵位置\n吸嘴更换\n取放料异常处理方式\n拍边异常处理方式\n光源调节与设置"],[4,11,"设备作业流程\n开关机流程\n安全操作规范\n吸嘴更换"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Surapot Kroppet","id":"C25CYL","j":"2025-09-29","v":[0.75,0.75,0.75,0.75,0.75,0.75,0.0,0.75,0.75,0.4286,0.75,0.75,0.75,0.5,0.25,0.0,0.25,0.25],"d":[[11,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作"],[9,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[9,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[6,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n取放料异常处理方式\n光源调节与设置"],[10,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n参数精度确认"],[9,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[0,9,"No skill items listed"],[12,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[12,19,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n切机流程操作\n机种配方修改&搭建\n参数精度确认"],[6,14,"设置tray盘&治具矩阵位置\n取放料位置更改\n更换吸嘴&中转\n吸嘴校准\n取放料异常处理方式\n光源调节与设置"],[12,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[10,16,"设置治具矩阵位置\n点胶位置更改\n更换胶水\n胶水&测高校准\n点胶异常处理方式\n测高异常处理方法\n光源调节与设置\nMark识别异常处理方式\n切机流程操作\n参数精度确认"],[5,10,"设置tray盘矩阵位置\n吸嘴更换\n取放料异常处理方式\n拍边异常处理方式\n光源调节与设置"],[4,11,"设备作业流程\n开关机流程\n安全操作规范\n吸嘴更换"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Wasin Koyama","id":"C2546W","j":"2025-11-26","v":[0.75,0.75,0.75,0.75,0.75,0.75,0.0,0.75,0.75,0.5,0.75,0.75,0.75,0.5,0.25,0.0,0.5,0.5],"d":[[9,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n光源调节与设置\nMark识别异常处理方式"],[8,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n光源调节与设置"],[11,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n切机流程操作\n参数精度确认"],[6,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n取放料异常处理方式\n光源调节与设置"],[9,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[11,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置\n切机流程操作\n参数精度确认"],[0,9,"No skill items listed"],[9,18,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[9,19,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水\n吸嘴&胶水&测高校准\n取放料异常处理方式\n点胶异常的处理方式\n测高异常处理方法\n光源调节与设置"],[7,14,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n取放料位置更改\n更换吸嘴&中转\n取放料异常处理方式"],[5,17,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n光源调节与设置"],[7,16,"设置治具矩阵位置\n点胶位置更改\n更换胶水\n胶水&测高校准\n点胶异常处理方式\n测高异常处理方法\n光源调节与设置"],[5,10,"设置tray盘矩阵位置\n吸嘴更换\n取放料异常处理方式\n拍边异常处理方式\n光源调节与设置"],[4,11,"设备作业流程\n开关机流程\n安全操作规范\n吸嘴更换"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Pongsathon Wikalkit","id":"R26524","j":"2026-03-30","v":[0.75,0.75,0.3889,0.25,0.4118,0.3889,0.0,0.3889,0.3684,0.5,0.75,0.75,0.7,0.2727,0.25,0.0,0.25,0.7],"d":[[8,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n光源调节与设置\nMark识别异常处理方式"],[7,16,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换吸嘴&胶水&中转\n光源调节与设置"],[7,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换吸嘴&胶水\n光源调节与设置"],[4,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转"],[7,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换吸嘴&胶水\n光源调节与设置"],[7,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换吸嘴&胶水\n光源调节与设置"],[0,9,"No skill items listed"],[7,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换胶水\n光源调节与设置"],[7,19,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换胶水\n光源调节与设置"],[3,14,"设备作业流程\n开关机流程\n安全操作规范"],[5,17,"设备作业流程\n开关机流程\n安全操作规范\n料笼上下料层高设置\n光源调节与设置"],[6,16,"设备作业流程\n开关机流程\n安全操作规范\n更换胶水\n胶水校准\n光源调节与设置"],[5,10,"设备作业流程\n开关机流程\n安全操作规范\n吸嘴更换\n拍边异常处理方式"],[3,11,"设备作业流程\n开关机流程\n安全操作规范"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Suthipod Phimson","id":"C269H4","j":"2026-04-28","v":[0.3529,0.5,0.2778,0.25,0.2941,0.2778,0.0,0.3889,0.3684,0.2143,0.1765,0.5,0.3,0.2727,0.25,0.0,0.5,0.25],"d":[[6,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n光源调节与设置"],[6,16,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n光源调节与设置"],[5,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置"],[4,16,"设置tray盘&治具矩阵位置\n取放料位置更改\n料笼上下料层高设置\n更换吸嘴&胶水&中转"],[5,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置"],[5,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置"],[0,9,"No skill items listed"],[7,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换胶水\n光源调节与设置"],[7,19,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n更换胶水\n光源调节与设置"],[3,14,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[6,16,"设备作业流程\n开关机流程\n安全操作规范\n更换胶水\n胶水校准\n光源调节与设置"],[3,10,"设备作业流程\n开关机流程\n安全操作规范"],[3,11,"设备作业流程\n开关机流程\n安全操作规范"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Thanakorn Sansoi","id":"C263DY","j":"2026-05-20","v":[0.75,0.75,0.3,0.5,0.3,0.5,0.0,0.3,0.3,0.3,0.6,0.6,0.6,0.2727,0.25,0.0,0.75,0.3],"d":[[5,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n光源调节与设置"],[6,16,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置\n光源调节与设置"],[5,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[5,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置"],[5,18,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置\n料笼上下料层高设置"],[0,9,"No skill items listed"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,19,"设备作业流程\n开关机流程\n安全操作规范"],[3,14,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,10,"设备作业流程\n开关机流程\n安全操作规范"],[3,11,"设备作业流程\n开关机流程\n安全操作规范"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Jannarong Kongroek","id":"R26R69","j":"2026-06-03","v":[0.2353,0.4706,0.1667,0.1875,0.1765,0.1667,0.0,0.1667,0.6316,0.2143,0.1765,0.1875,0.3,0.7273,0.25,0.1667,0.8,0.75],"d":[[4,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[4,16,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[0,9,"No skill items listed"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,19,"设备作业流程\n开关机流程\n安全操作规范"],[3,14,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,10,"设备作业流程\n开关机流程\n安全操作规范"],[3,11,"设备作业流程\n开关机流程\n安全操作规范"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Kittipong Prachit","id":"C26H1H","j":"2026-10-05","v":[0.1,0.1,0.15,0.15,0.1,0.1,0.0,0.15,0.15,0.05,0.25,0.25,0.1,0.0,0.0,0.0,0.25,0.1],"d":[[4,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[4,16,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[0,9,"No skill items listed"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,19,"设备作业流程\n开关机流程\n安全操作规范"],[3,14,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,10,"设备作业流程\n开关机流程\n安全操作规范"],[3,11,"设备作业流程\n开关机流程\n安全操作规范"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Sarawoot Yoorayat","id":"C26H0S","j":"2026-09-30","v":[0.1,0.1,0.15,0.15,0.1,0.1,0.0,0.15,0.15,0.05,0.25,0.25,0.1,0.0,0.0,0.0,0.25,0.1],"d":[[4,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[4,16,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[0,9,"No skill items listed"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,19,"设备作业流程\n开关机流程\n安全操作规范"],[3,14,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,10,"设备作业流程\n开关机流程\n安全操作规范"],[3,11,"设备作业流程\n开关机流程\n安全操作规范"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]},{"n":"Borarin Phanchaeng","id":"C26H22","j":"2026-10-07","v":[0.1,0.1,0.15,0.15,0.1,0.1,0.0,0.15,0.15,0.05,0.25,0.25,0.1,0.0,0.0,0.0,0.25,0.1],"d":[[4,17,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[4,16,"设备作业流程\n开关机流程\n安全操作规范\n设置tray盘&治具矩阵位置"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[0,9,"No skill items listed"],[3,18,"设备作业流程\n开关机流程\n安全操作规范"],[3,19,"设备作业流程\n开关机流程\n安全操作规范"],[3,14,"设备作业流程\n开关机流程\n安全操作规范"],[3,17,"设备作业流程\n开关机流程\n安全操作规范"],[3,16,"设备作业流程\n开关机流程\n安全操作规范"],[3,10,"设备作业流程\n开关机流程\n安全操作规范"],[3,11,"设备作业流程\n开关机流程\n安全操作规范"],[3,12,"设备作业流程\n开关机流程\n安全操作规范"],null,null,null]}]};
+D0.eq=D0.eq.map(function(n){return{n:n,img:""}});
+var KEY="wbm-v2-copy-config",DK="wbm-v2-copy-data",NM=["Ready","Supervised","Training","Basic"];
+var DEF={sub:"Thailand Factory DL – Update October 2026",r:70,s:50,t:30,theme:"",note:["Skill (%) is based on self-assessment and actual work performance.","Overall Skill = Average of all equipment skills.","Click a % cell to see the listed skill items. Use Edit to change %, people, machines and photos; edits are saved in this browser only."]};
+var $=function(i){return document.getElementById(i)};
+function clone(o){return JSON.parse(JSON.stringify(o))}
+var C=load(),D=loadD(),edit=false,view="M",RC=[],snap="",imgJ=-1,saveT=0;
+function load(){try{var o=JSON.parse(localStorage.getItem(KEY));if(o&&o.r)return o}catch(e){}return clone(DEF)}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(C))}catch(e){}}
+function loadD(){try{var o=JSON.parse(localStorage.getItem(DK));if(o&&o.eq&&o.p)return o}catch(e){}return clone(D0)}
+function saveD(){clearTimeout(saveT);saveT=setTimeout(function(){try{localStorage.setItem(DK,JSON.stringify(D))}catch(e){toast("Browser storage is full. Changes last only until you close this page.")}},250)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function tier(p){p=p*100;return p>=C.r-1e-9?0:p>=C.s-1e-9?1:p>=C.t-1e-9?2:3}
+function avg(v){return v.length?v.reduce(function(a,b){return a+b},0)/v.length:0}
+function fmt(v){return +(v*100).toFixed(1)}
+function today(){var d=new Date(),p=function(n){return(n<10?"0":"")+n};return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate())}
+function dur(iso){var a=new Date(iso+"T00:00:00"),n=new Date();if(isNaN(a)||a>n)return"–";
+ var y=n.getFullYear()-a.getFullYear(),m=n.getMonth()-a.getMonth(),d=n.getDate()-a.getDate();
+ if(d<0){m--;d+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}if(m<0){y--;m+=12}return y+" Y "+m+" M "+d+" D"}
+function chart(v){var w=4,g=1.5,H=30,s='<svg width="'+(v.length*(w+g))+'" height="'+H+'" aria-hidden="true">';
+ v.forEach(function(x,i){var h=Math.max(1.5,x*H);s+='<rect x="'+(i*(w+g))+'" y="'+(H-h)+'" width="'+w+'" height="'+h+'" rx="1" fill="var(--t'+tier(x)+')"/>'});return s+'</svg>'}
+function badge(t){return '<span class="st t'+t+'"><svg width="16" height="16" aria-hidden="true"><use href="#ic'+t+'"/></svg>'+NM[t]+'</span>'}
+function stats(){var rows=D.p.map(function(p){var a=avg(p.v);return{a:a,t:tier(a)}});
+ var cnt=[0,0,0,0];rows.forEach(function(r){cnt[r.t]++});
+ return{rows:rows,cnt:cnt,avg:avg(rows.map(function(r){return r.a}))}}
+function summary(){var S=stats(),n=D.p.length,pc=function(k){return n?(k/n*100).toFixed(1):"0.0"};
+ var k='<div>Total Technicians<strong>'+n+'</strong>Persons</div><div>Average Overall Skill<strong>'+(S.avg*100).toFixed(1)+'%</strong></div>';
+ for(var t=0;t<4;t++)k+='<div>'+NM[t]+'<strong class="c'+t+'">'+S.cnt[t]+'</strong>Persons ('+pc(S.cnt[t])+'%)</div>';
+ $("kp").innerHTML=k}
+function render(){var S=stats(),ne=D.eq.length,h='<thead><tr><th class="nm" rowspan="2">Technician<br>Name</th><th rowspan="2">Date Join to<br>RX Engineering</th><th rowspan="2">Employment<br>Duration</th><th class="grp" colspan="'+Math.max(1,ne)+'">EQUIPMENT SKILL (%)</th><th rowspan="2">OVERALL SKILL<br>(Average)</th><th rowspan="2">SKILL PROFILE<br>(CHART)</th><th rowspan="2">WORK READINESS<br>STATUS</th></tr><tr>';
+ if(!ne)h+='<th class="eq">No machines yet</th>';
+ D.eq.forEach(function(e,j){var im=e.img?'<img src="'+e.img+'" alt="">':'<svg width="22" height="22" aria-hidden="true"><use href="#mc"/></svg>';
+  if(edit)h+='<th class="eq"><button class="im" data-im="'+j+'" title="Upload a machine photo">'+im+'</button><input class="en" type="text" value="'+esc(e.n)+'" data-en="'+j+'" aria-label="Machine name"><button class="x" data-xj="'+j+'" aria-label="Remove machine '+esc(e.n)+'">✕</button></th>';
+  else h+='<th class="eq">'+im+esc(e.n)+'</th>'});
+ h+='</tr></thead><tbody>';
+ D.p.forEach(function(p,i){var r=S.rows[i];h+='<tr data-r="'+i+'">';
+  if(edit)h+='<th class="nm" scope="row"><input class="in" type="text" value="'+esc(p.n)+'" data-f="n" data-i="'+i+'" aria-label="Technician name"><input class="in sm" type="text" value="'+esc(p.id)+'" placeholder="Employee ID" data-f="id" data-i="'+i+'" aria-label="Employee ID"><button class="x" data-xi="'+i+'" aria-label="Remove '+esc(p.n)+'">✕</button></th><td><input class="in" type="date" value="'+esc(p.j)+'" data-f="j" data-i="'+i+'" aria-label="Date joined"></td>';
+  else h+='<th class="nm" scope="row"><b>'+esc(p.n)+'</b><i>'+esc(p.id)+'</i></th><td>'+esc(p.j)+'</td>';
+  h+='<td class="du">'+dur(p.j)+'</td>';
+  p.v.forEach(function(v,j){
+   if(edit)h+='<td><input class="pi c'+tier(v)+'" type="number" min="0" max="100" step="any" value="'+fmt(v)+'" data-i="'+i+'" data-j="'+j+'" aria-label="'+esc(p.n)+', '+esc(D.eq[j].n)+' skill percent"></td>';
+   else h+='<td class="pc c'+tier(v)+'" data-i="'+i+'" data-j="'+j+'" tabindex="0" role="button">'+Math.round(v*100)+'%</td>'});
+  if(!ne)h+='<td></td>';
+  h+='<td class="ov c'+r.t+'">'+(r.a*100).toFixed(1)+'%</td><td class="pf">'+chart(p.v)+'</td><td class="stc">'+badge(r.t)+'</td></tr>'});
+ if(!D.p.length)h+='<tr><td colspan="'+(7+Math.max(1,ne))+'">No technicians yet. Turn on Edit and press “+ Technician”.</td></tr>';
+ $("tbl").innerHTML=h+'</tbody>';
+ $("tbl").className=edit?"ed":"";$("tbl").style.minWidth=(700+Math.max(1,ne)*(edit?92:62))+"px";
+ $("sub").textContent=C.sub;
+ var th=[["≥"+C.r+"%",0],[C.s+"–"+(C.r-1)+"%",1],[C.t+"–"+(C.s-1)+"%",2],["<"+C.t+"%",3]];
+ $("lg").innerHTML=th.map(function(x){return '<span><i class="dot" style="background:var(--t'+x[1]+')"></i>'+NM[x[1]]+' ('+x[0]+')</span>'}).join("");
+ summary();if(view==="R")renderRadar()}
+function updateRow(i){var row=$("tbl").querySelector('tr[data-r="'+i+'"]');if(!row)return;var p=D.p[i],a=avg(p.v),t=tier(a);
+ var o=row.querySelector(".ov");o.textContent=(a*100).toFixed(1)+"%";o.className="ov c"+t;
+ row.querySelector(".pf").innerHTML=chart(p.v);row.querySelector(".stc").innerHTML=badge(t);row.querySelector(".du").textContent=dur(p.j);
+ row.querySelectorAll(".pi").forEach(function(el){el.className="pi c"+tier(p.v[+el.dataset.j]||0)});summary()}
+function toast(t,undo){var e=$("toast");e.textContent=t;
+ if(undo){var b=document.createElement("button");b.textContent="Undo";b.className="ub";b.onclick=function(){D=JSON.parse(snap);saveD();render();e.className="toast"};e.appendChild(b)}
+ e.className="toast on"+(undo?" act":"");clearTimeout(toast.t);toast.t=setTimeout(function(){e.className="toast"},undo?7000:2600)}
+function mark(){snap=JSON.stringify(D)}
+
+function showDetail(i,j){var p=D.p[i],v=p.v[j],d=p.d&&p.d[j];
+ $("dT").textContent=p.n+" – "+D.eq[j].n;var L=$("dL");L.innerHTML="";
+ var base="Current skill "+(v*100).toFixed(1)+"%. ";
+ if(d){$("dS").textContent=base+"The Excel file listed "+d[0]+" of "+d[1]+" reference skill items:";
+  d[2].split("\n").forEach(function(x){if(x&&x!=="No skill items listed"){var li=document.createElement("li");li.textContent=x;L.appendChild(li)}});
+  if(!L.children.length)$("dS").textContent=base+"The Excel file lists no skill items yet."}
+ else $("dS").textContent=base+"No skill item list is stored for this technician and machine.";
+ $("dtl").showModal()}
+
+$("tbl").addEventListener("input",function(e){var el=e.target,i=+el.dataset.i,p=D.p[i];
+ if(el.classList.contains("pi")){var n=parseFloat(el.value);if(isNaN(n))n=0;n=Math.max(0,Math.min(100,n));p.v[+el.dataset.j]=n/100;updateRow(i);saveD()}
+ else if(el.dataset.f){if(el.dataset.f==="j"&&!el.value)return;p[el.dataset.f]=el.value;if(el.dataset.f==="j")updateRow(i);saveD()}
+ else if(el.dataset.en!==undefined){D.eq[+el.dataset.en].n=el.value;saveD()}});
+$("tbl").addEventListener("change",function(e){var el=e.target;
+ if(el.classList.contains("pi")){var n=parseFloat(el.value);if(isNaN(n)||n<0||n>100){el.value=fmt(D.p[+el.dataset.i].v[+el.dataset.j])}}});
+$("tbl").addEventListener("click",function(e){var t=e.target,b;
+ if(b=t.closest("[data-xi]")){mark();var i=+b.dataset.xi,nm=D.p[i].n;D.p.splice(i,1);saveD();render();toast("Removed "+(nm||"technician"),true);return}
+ if(b=t.closest("[data-xj]")){mark();var j=+b.dataset.xj,mn=D.eq[j].n;D.eq.splice(j,1);D.p.forEach(function(p){p.v.splice(j,1);if(p.d)p.d.splice(j,1)});saveD();render();toast("Removed "+(mn||"machine"),true);return}
+ if(b=t.closest("[data-im]")){imgJ=+b.dataset.im;$("fImg").click();return}
+ if(b=t.closest(".pc"))showDetail(+b.dataset.i,+b.dataset.j)});
+$("tbl").addEventListener("keydown",function(e){var c=e.target.closest(".pc");if(c&&e.key==="Enter")showDetail(+c.dataset.i,+c.dataset.j)});
+$("dX").onclick=function(){$("dtl").close()};
+
+$("fImg").onchange=function(){var f=this.files[0];this.value="";if(!f||imgJ<0)return;var j=imgJ,fr=new FileReader();
+ fr.onload=function(){var im=new Image();
+  im.onload=function(){var m=180,s=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));
+   c.getContext("2d").drawImage(im,0,0,c.width,c.height);if(!D.eq[j])return;D.eq[j].img=c.toDataURL("image/webp",.85);saveD();render();toast("Photo added")};
+  im.onerror=function(){toast("Could not read that image")};im.src=fr.result};
+ fr.onerror=function(){toast("Could not read that file")};fr.readAsDataURL(f)};
+
+$("bEdit").onclick=function(){edit=!edit;this.textContent=edit?"✔ Done":"✎ Edit";$("bAddP").hidden=$("bAddM").hidden=!edit;render()};
+$("bAddP").onclick=function(){mark();D.p.push({n:"New technician",id:"",j:today(),v:D.eq.map(function(){return 0}),d:D.eq.map(function(){return null})});saveD();render();
+ var r=$("tbl").querySelector("tbody tr:last-child .in");if(r){r.scrollIntoView({block:"center"});r.focus();r.select()}};
+$("bAddM").onclick=function(){mark();D.eq.push({n:"New machine",img:""});D.p.forEach(function(p){p.v.push(0);if(!p.d)p.d=[];p.d.push(null)});saveD();render();
+ var r=$("tbl").querySelector("thead th.eq:last-child .en");if(r){r.scrollIntoView({inline:"center",block:"nearest"});r.focus();r.select()}};
+
+function theme(t){if(t)document.documentElement.setAttribute("data-theme",t);else document.documentElement.removeAttribute("data-theme")}
+theme(C.theme);
+$("bTheme").onclick=function(){var dk=getComputedStyle(document.documentElement).colorScheme==="dark";C.theme=dk?"light":"dark";theme(C.theme);save()};
+function fill(){$("fSub").value=C.sub;$("fR").value=C.r;$("fS").value=C.s;$("fT").value=C.t}
+$("bCfg").onclick=function(){fill();$("cfg").showModal()};
+$("cCancel").onclick=function(){$("cfg").close()};
+$("cReset").onclick=function(){var t=C.theme;C=clone(DEF);C.theme=t;save();fill();render();toast("Settings reset")};
+$("cData").onclick=function(){mark();D=clone(D0);saveD();render();$("cfg").close();toast("Restored the data from the Excel file",true)};
+$("cSave").onclick=function(){var r=+$("fR").value,s=+$("fS").value,t=+$("fT").value;
+ if(!(r>s&&s>t&&t>0)){toast("Use Ready > Supervised > Training > 0");return}
+ C.sub=$("fSub").value.trim()||DEF.sub;C.r=r;C.s=s;C.t=t;save();render();$("cfg").close();toast("Saved")};
+
+function loadImgs(){return Promise.all(D.eq.map(function(e){return new Promise(function(res){if(!e.img)return res(null);var im=new Image();im.onload=function(){res(im)};im.onerror=function(){res(null)};im.src=e.img})}))}
+$("bPng").onclick=async function(){
+ var IM=await loadImgs(),any=IM.some(Boolean);
+ var cs=getComputedStyle(document.documentElement),g=function(n){return cs.getPropertyValue(n).trim()};
+ var S=stats(),ne=D.eq.length,F='"Noto Sans Thai","PingFang SC","Microsoft YaHei",sans-serif';
+ var Wd=[190,100,100].concat(D.eq.map(function(){return 62}),[84,110,120]),X=[0];Wd.forEach(function(w,i){X.push(X[i]+w)});
+ var TW=X[X.length-1],bh=96,gh=30,hh=any?112:64,rh=46,sh=96,gap=12,NL=noteLines(),nh=NL.length?gap+34+NL.length*18:0,H=bh+gap+gh+hh+rh*D.p.length+gap+sh+nh,sc=2;
+ var cv=document.createElement("canvas");cv.width=TW*sc;cv.height=H*sc;var x=cv.getContext("2d");x.scale(sc,sc);
+ function rr(a,b,w,h,r,f){x.fillStyle=f;x.beginPath();x.roundRect?x.roundRect(a,b,w,h,r):x.rect(a,b,w,h);x.fill()}
+ function ctr(t,cx,cy,font,col){x.font=font;x.fillStyle=col;x.textAlign="center";x.textBaseline="middle";t.split("\n").forEach(function(l,i,A){x.fillText(l,cx,cy+(i-(A.length-1)/2)*14)})}
+ function wrap(t,w,mx){x.font="700 11px "+F;var L=[],cur="";for(var i=0;i<t.length;i++){if(x.measureText(cur+t[i]).width>w&&cur){L.push(cur);cur=t[i]}else cur+=t[i]}L.push(cur);return L.slice(0,mx).join("\n")}
+ x.fillStyle=g("--bg");x.fillRect(0,0,TW,H);
+ x.fillStyle=g("--navy");x.fillRect(0,0,TW,bh);
+ x.strokeStyle="#fff";x.lineWidth=5;x.beginPath();x.arc(46,48,16,0,7);x.stroke();
+ x.textAlign="left";x.textBaseline="middle";x.fillStyle="#fff";x.font="800 26px "+F;x.fillText("Non-Standard MACHINE SKILL & WORK READINESS MATRIX",84,34);
+ x.fillStyle=g("--yel");x.font="700 18px "+F;x.fillText(C.sub,84,68);
+ rr(TW-560,14,544,68,10,"#fff");ctr("WORK READINESS STATUS",TW-288,30,"700 13px "+F,"#12284c");
+ var lg=[["Ready ≥"+C.r+"%",0],["Supervised "+C.s+"–"+(C.r-1)+"%",1],["Training "+C.t+"–"+(C.s-1)+"%",2],["Basic <"+C.t+"%",3]];
+ lg.forEach(function(l,i){var lx=TW-546+i*136;x.fillStyle=g("--t"+l[1]);x.beginPath();x.arc(lx+6,58,6,0,7);x.fill();x.textAlign="left";x.fillStyle="#12284c";x.font="500 12px "+F;x.fillText(l[0],lx+16,58)});
+ var y0=bh+gap;
+ x.fillStyle=g("--navy");x.fillRect(0,y0,X[3],gh+hh);x.fillRect(X[3+ne],y0,TW-X[3+ne],gh+hh);
+ x.fillStyle=g("--navy2");x.fillRect(X[3],y0,X[3+ne]-X[3],gh);
+ ctr("EQUIPMENT SKILL (%)",(X[3]+X[3+ne])/2,y0+gh/2,"700 13px "+F,"#fff");
+ [["Technician\nName",0],["Date Join to\nRX Engineering",1],["Employment\nDuration",2]].forEach(function(a){ctr(a[0],(X[a[1]]+X[a[1]+1])/2,y0+(gh+hh)/2,"700 13px "+F,"#fff")});
+ [["OVERALL SKILL\n(Average)",3+ne],["SKILL PROFILE\n(CHART)",4+ne],["WORK READINESS\nSTATUS",5+ne]].forEach(function(a){ctr(a[0],(X[a[1]]+X[a[1]+1])/2,y0+(gh+hh)/2,"700 12px "+F,"#fff")});
+ var lc=g("--navy2")==="#123c7c"?"#123c7c":"#bcd3f2";
+ D.eq.forEach(function(e,j){var cx=X[3+j]+31;x.fillStyle=g("--eqh");x.fillRect(X[3+j],y0+gh,62,hh);
+  if(IM[j]){var im=IM[j],s=Math.min(54/im.width,48/im.height);x.drawImage(im,cx-im.width*s/2,y0+gh+6+(48-im.height*s)/2,im.width*s,im.height*s)}
+  ctr(wrap(e.n,56,any?3:4),cx,y0+gh+(any?82:hh/2),"700 11px "+F,lc)});
+ var ry=y0+gh+hh;
+ D.p.forEach(function(p,i){var y=ry+i*rh,cy=y+rh/2,r=S.rows[i];
+  x.fillStyle=i%2?g("--row"):g("--panel");x.fillRect(0,y,TW,rh);
+  x.strokeStyle=g("--line");x.lineWidth=1;x.beginPath();x.moveTo(0,y+rh);x.lineTo(TW,y+rh);x.stroke();
+  x.textAlign="left";x.textBaseline="middle";x.fillStyle=g("--ink");x.font="700 13px "+F;x.fillText(p.n,10,cy-8);x.fillStyle=g("--mute");x.font="400 11px "+F;x.fillText(p.id,10,cy+9);
+  ctr(p.j,(X[1]+X[2])/2,cy,"400 12px "+F,g("--ink"));ctr(dur(p.j),(X[2]+X[3])/2,cy,"400 12px "+F,g("--ink"));
+  p.v.forEach(function(v,j){ctr(Math.round(v*100)+"%",X[3+j]+31,cy,"800 13px "+F,g("--c"+tier(v)))});
+  ctr((r.a*100).toFixed(1)+"%",(X[3+ne]+X[4+ne])/2,cy,"800 14px "+F,g("--c"+r.t));
+  var bx=X[4+ne]+(110-p.v.length*5.5)/2;p.v.forEach(function(v,k){var h=Math.max(1.5,v*30);x.fillStyle=g("--t"+tier(v));x.fillRect(bx+k*5.5,cy+15-h,4,h)});
+  var sx=X[5+ne]+8;rr(sx,cy-13,104,26,6,g("--t"+r.t));ctr(NM[r.t],sx+52,cy,"700 12px "+F,r.t===1?"#3a2f00":"#fff")});
+ var fy=ry+rh*D.p.length+gap;rr(0,fy,TW,sh,10,g("--panel"));
+ x.textAlign="left";x.fillStyle=g("--navy2");x.font="700 12px "+F;x.fillText("TEAM SUMMARY",16,fy+16);
+ var n=D.p.length,items=[["Total Technicians",String(n),g("--ink")],["Average Overall Skill",(S.avg*100).toFixed(1)+"%",g("--ink")]];
+ for(var t=0;t<4;t++)items.push([NM[t]+" ("+(n?(S.cnt[t]/n*100).toFixed(1):0)+"%)",String(S.cnt[t]),g("--c"+t)]);
+ items.forEach(function(it,k){var cx=40+(TW-80)*(k+.5)/items.length;ctr(it[1],cx,fy+52,"800 26px "+F,it[2]);ctr(it[0],cx,fy+80,"500 12px "+F,g("--mute"))});
+ if(nh){var ny=fy+sh+gap;rr(0,ny,TW,nh-gap,10,g("--panel"));x.textAlign="left";x.textBaseline="middle";x.fillStyle=g("--ink");x.font="700 13px "+F;x.fillText("Note:",16,ny+18);x.fillStyle=g("--mute");x.font="400 12px "+F;NL.forEach(function(l,k){x.fillText("• "+l,24,ny+40+k*18)})}
+ function preview(){try{$("pvI").src=cv.toDataURL("image/png");$("pv").showModal()}catch(e){toast("Could not create the image")}}
+ cv.toBlob(async function(b){
+  if(!b){toast("Could not create the image");return}
+  var dl=null;try{dl=await claude.use("downloads")}catch(e){}
+  if(!dl){preview();return}
+  try{await dl.save({filename:"skill-matrix-v2.png",data:b});toast("Image saved")}
+  catch(e){if(!e||e.code!=="declined")preview()}
+ },"image/png")};
+
+function noteLines(){return C.note||DEF.note}
+function renderNote(){$("nl").innerHTML=noteLines().map(function(l){return "<li>"+esc(l)+"</li>"}).join("")}
+$("bNote").onclick=function(){var ed=$("nT").hidden;
+ if(ed){$("nT").value=noteLines().join("\n");$("nT").hidden=false;$("nl").hidden=true;this.textContent="✔ Done";$("nT").focus()}
+ else{$("nT").hidden=true;$("nl").hidden=false;this.textContent="✎ Edit note";renderNote()}};
+$("nT").addEventListener("input",function(){C.note=this.value.split("\n").map(function(s){return s.trim()}).filter(Boolean);save()});
+
+function trunc(s,m){return s.length>m?s.slice(0,m-1)+"…":s}
+function radar(v,size,names){var n=v.length;if(n<3)return '<p class="rk">Add at least 3 machines to draw a radar.</p>';
+ var pad=names?104:22,cx=size/2,cy=size/2,R=size/2-pad,t=tier(avg(v));
+ function pt(i,r){var a=-Math.PI/2+2*Math.PI*i/n;return[cx+R*r*Math.cos(a),cy+R*r*Math.sin(a),Math.cos(a)]}
+ function poly(f){var s=[];for(var i=0;i<n;i++){var p=pt(i,f(i));s.push(p[0].toFixed(1)+","+p[1].toFixed(1))}return s.join(" ")}
+ var s='<svg viewBox="0 0 '+size+' '+size+'" width="'+size+'" height="'+size+'" role="img" aria-label="Radar chart">';
+ [.25,.5,.75,1].forEach(function(r){s+='<polygon points="'+poly(function(){return r})+'" fill="none" style="stroke:var(--line)" stroke-width="1"/>'});
+ s+='<polygon points="'+poly(function(){return C.r/100})+'" fill="none" style="stroke:var(--t0)" stroke-width="1.2" stroke-dasharray="4 3"/>';
+ for(var i=0;i<n;i++){var e=pt(i,1);s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+e[0].toFixed(1)+'" y2="'+e[1].toFixed(1)+'" style="stroke:var(--line)"/>'}
+ s+='<polygon points="'+poly(function(i){return Math.max(0,Math.min(1,v[i]))})+'" style="fill:var(--t'+t+');stroke:var(--t'+t+')" fill-opacity=".3" stroke-width="2" stroke-linejoin="round"/>';
+ for(var k=0;k<n;k++){var d=pt(k,Math.max(0,Math.min(1,v[k])));s+='<circle cx="'+d[0].toFixed(1)+'" cy="'+d[1].toFixed(1)+'" r="'+(names?3.5:2.4)+'" style="fill:var(--t'+tier(v[k])+')"/>'}
+ for(var m=0;m<n;m++){var q=pt(m,1+(names?12:11)/R),an=q[2]>.3?"start":q[2]<-.3?"end":"middle";
+  s+='<text x="'+q[0].toFixed(1)+'" y="'+q[1].toFixed(1)+'" text-anchor="'+an+'" dominant-baseline="middle" font-size="'+(names?11:9)+'" style="fill:var(--mute)">'+esc(names?trunc(D.eq[m].n,13)+" "+Math.round(v[m]*100)+"%":String(m+1))+'</text>'}
+ return s+'</svg>'}
+function renderRadar(){var n=D.eq.length;
+ $("rk").innerHTML=D.eq.map(function(e,j){return '<span class="kc">'+(e.img?'<img src="'+e.img+'" alt="">':'')+'<b>'+(j+1)+'</b> '+esc(e.n)+'</span>'}).join("");
+ var av=D.eq.map(function(_,j){return avg(D.p.map(function(p){return p.v[j]||0}))});
+ RC=[{n:"Team average",id:D.p.length+" technicians",v:av,i:-1}].concat(D.p.map(function(p,i){return{n:p.n,id:p.id,v:p.v,i:i}}));
+ $("rg").innerHTML=RC.map(function(c){var a=avg(c.v),t=tier(a),k=c.v.filter(function(x){return x*100>=C.r-1e-9}).length;
+  return '<button class="rc" data-ri="'+c.i+'" aria-label="Open radar for '+esc(c.n)+'"><h3>'+esc(c.n)+'</h3><i>'+esc(c.id)+'</i>'+radar(c.v,250,false)+'<div class="rs"><strong class="c'+t+'">'+(a*100).toFixed(1)+'%</strong>'+badge(t)+'</div><small>'+k+' of '+n+' machines ≥ '+C.r+'%</small></button>'}).join("")}
+$("rg").addEventListener("click",function(e){var b=e.target.closest(".rc");if(!b)return;
+ var c=RC.filter(function(x){return x.i===+b.dataset.ri})[0];if(!c)return;var a=avg(c.v),t=tier(a);
+ $("rdT").textContent=c.n+(c.id?" ("+c.id+")":"");
+ $("rdS").innerHTML='<div class="rs"><strong class="c'+t+'">'+(a*100).toFixed(1)+'%</strong>'+badge(t)+'</div>';
+ $("rdV").innerHTML=radar(c.v,520,true);$("rd").showModal()});
+function showView(v){view=v;var r=v==="R";$("vM").hidden=r;$("vR").hidden=!r;
+ $("tM").setAttribute("aria-pressed",String(!r));$("tR").setAttribute("aria-pressed",String(r));
+ $("bEdit").hidden=$("bPng").hidden=r;$("bAddP").hidden=$("bAddM").hidden=r||!edit;
+ if(r)renderRadar()}
+$("tM").onclick=function(){showView("M")};$("tR").onclick=function(){showView("R")};
+renderNote();
+render();
+</script>
+</body>
+</html>
