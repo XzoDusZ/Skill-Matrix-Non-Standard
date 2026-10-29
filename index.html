@@ -160,6 +160,15 @@ tfoot .nm{background:var(--eqh);font-size:.8rem}
 thead th.eq{min-width:84px}
 thead th.eq img{max-width:76px;max-height:58px}
 .ed thead th.eq{min-width:100px}
+thead th.eq{vertical-align:top;width:84px}
+thead th.eq img{display:block;width:76px;height:56px;max-width:none;max-height:none;object-fit:cover;border-radius:4px;margin:0 auto 6px}
+.phb{display:grid;place-items:center;width:76px;height:56px;margin:0 auto 6px;background:rgba(128,128,128,.14);border-radius:4px;color:var(--mute)}
+.eqn{display:block;min-height:3.6em;line-height:1.2}
+.im{min-height:0;padding:2px}
+.im img,.im .phb{margin:0 auto}
+.mi img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;border-radius:6px}
+.mc h3{min-height:2.5em;display:grid;align-items:center}
+.kc img{width:26px;height:18px;object-fit:cover;border-radius:3px}
 </style>
 </head>
 <body>
@@ -255,9 +264,9 @@ function summary(){var S=stats(),n=VI().length,pc=function(k){return n?(k/n*100)
  $("kp").innerHTML=k}
 function render(){var S=stats(),cj=edit?D.eq.map(function(_,j){return j}):VJ(),ci=edit?D.p.map(function(_,i){return i}):VI(),ne=cj.length,h='<thead><tr><th class="nm" rowspan="2">Technician<br>Name</th><th rowspan="2">Date Join to<br>RX Engineering</th><th rowspan="2">Employment<br>Duration</th><th class="grp" colspan="'+Math.max(1,ne)+'">EQUIPMENT SKILL (%)</th><th rowspan="2">OVERALL SKILL<br>(Average)</th><th rowspan="2">SKILL PROFILE<br>(CHART)</th><th rowspan="2">WORK READINESS<br>STATUS</th></tr><tr>';
  if(!ne)h+='<th class="eq">'+(edit?"No machines yet":"No machines shown")+'</th>';
- cj.forEach(function(j){var e=D.eq[j],im=imgSrc(e)?'<img src="'+esc(imgSrc(e))+'" alt="">':'<svg width="22" height="22" aria-hidden="true"><use href="#mc"/></svg>';
+ cj.forEach(function(j){var e=D.eq[j],im=imgSrc(e)?'<img src="'+esc(imgSrc(e))+'" alt="">':'<span class="phb"><svg width="22" height="22" aria-hidden="true"><use href="#mc"/></svg></span>';
   if(edit)h+='<th class="eq'+(e.hid?" hd":"")+'"><button class="im" data-im="'+j+'" title="Upload a machine photo">'+im+'</button><input class="en" type="text" value="'+esc(e.n)+'" data-en="'+j+'" aria-label="Machine name"><span class="tb"><button class="hb" data-hj="'+j+'">'+(e.hid?"Show":"Hide")+'</button><button class="x" data-xj="'+j+'" aria-label="Remove machine '+esc(e.n)+'">✕</button></span></th>';
-  else h+='<th class="eq">'+im+esc(e.n)+'</th>'});
+  else h+='<th class="eq">'+im+'<span class="eqn">'+esc(e.n)+'</span></th>'});
  h+='</tr></thead><tbody>';
  ci.forEach(function(i){var p=D.p[i],r=S.rows[i];h+='<tr data-r="'+i+'"'+(p.hid?' class="hd"':'')+'>';
   if(edit)h+='<th class="nm" scope="row"><input class="in" type="text" value="'+esc(p.n)+'" data-f="n" data-i="'+i+'" aria-label="Technician name"><input class="in sm" type="text" value="'+esc(p.id)+'" placeholder="Employee ID" data-f="id" data-i="'+i+'" aria-label="Employee ID"><span class="tb"><button class="hb" data-hi="'+i+'">'+(p.hid?"Show":"Hide")+'</button></span><button class="x" data-xi="'+i+'" aria-label="Remove '+esc(p.n)+'">✕</button></th><td><input class="in" type="date" value="'+esc(p.j)+'" data-f="j" data-i="'+i+'" aria-label="Date joined"></td>';
@@ -370,7 +379,7 @@ $("bPng").onclick=async function(){
  [["OVERALL SKILL\n(Average)",3+ne],["SKILL PROFILE\n(CHART)",4+ne],["WORK READINESS\nSTATUS",5+ne]].forEach(function(a){ctr(a[0],(X[a[1]]+X[a[1]+1])/2,y0+(gh+hh)/2,"700 12px "+F,"#fff")});
  var lc=g("--navy2")==="#123c7c"?"#123c7c":"#bcd3f2";
  cj.forEach(function(j,k){var e=D.eq[j],cx=X[3+k]+CW/2;x.fillStyle=g("--eqh");x.fillRect(X[3+k],y0+gh,CW,hh);
-  if(IM[j]){var im=IM[j],s=Math.min(76/im.width,58/im.height);x.drawImage(im,cx-im.width*s/2,y0+gh+6+(58-im.height*s)/2,im.width*s,im.height*s)}
+  if(IM[j]){var im=IM[j],bw2=76,bh2=56,s=Math.max(bw2/im.width,bh2/im.height),sw=bw2/s,sh2=bh2/s;x.drawImage(im,(im.width-sw)/2,(im.height-sh2)/2,sw,sh2,cx-bw2/2,y0+gh+6,bw2,bh2)}else if(any){x.fillStyle="rgba(128,128,128,.18)";x.fillRect(cx-38,y0+gh+6,76,56)}
   ctr(wrap(e.n,CW-10,any?3:4),cx,y0+gh+(any?96:hh/2),"700 11px "+F,lc)});
  var ry=y0+gh+hh;
  ci.forEach(function(i,ri){var p=D.p[i],y=ry+ri*rh,cy=y+rh/2,r=S.rows[i];
