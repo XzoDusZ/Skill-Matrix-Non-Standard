@@ -169,6 +169,98 @@ thead th.eq img{display:block;width:76px;height:56px;max-width:none;max-height:n
 .mi img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;border-radius:6px}
 .mc h3{min-height:2.5em;display:grid;align-items:center}
 .kc img{width:26px;height:18px;object-fit:cover;border-radius:3px}
+.top{margin:8px 0 0;padding:8px 12px;border-radius:8px;background:var(--eqh)}
+.rl{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.rli{display:grid;grid-template-columns:34px minmax(0,1fr) 110px 44px;gap:8px;align-items:center;font-size:.84rem}
+.rli img,.rli .rph{display:block;width:34px;height:24px;object-fit:cover;border-radius:3px;background:rgba(128,128,128,.15)}
+.rn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rli.best .rn{font-weight:700}
+.rb{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.rb i{display:block;height:100%}
+.rli b{text-align:right}
+:root{--tl:#13778a;--tlbg:#e3f1f4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tl:#5cc2d3;--tlbg:#17333d}}
+:root[data-theme="dark"]{--tl:#5cc2d3;--tlbg:#17333d}
+.hero{position:relative;border-radius:14px;padding:26px 28px 22px;color:#fff;background:linear-gradient(120deg,#0d5666,#1b8aa0 55%,#2d6fa8);min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;overflow:hidden}
+.hero .chip{align-self:flex-start;background:rgba(255,255,255,.92);color:#123;border-radius:6px;padding:2px 10px;font-weight:600;font-size:.82rem}
+.hero h2{margin:0;font-size:clamp(1.3rem,3vw,2rem);font-weight:800;line-height:1.2}
+.hero .btn{color:var(--ink)}
+.hero p{margin:0;opacity:.92;max-width:900px}
+.hero #tAct{position:absolute;top:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.tinfo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-top:10px;overflow:hidden}
+.tinfo div{padding:12px 18px;border-right:1px solid var(--line);display:grid;gap:2px}
+.tinfo small,.tsp{color:var(--mute)}
+.tst{display:flex;gap:22px;flex-wrap:wrap;padding:10px 18px;background:var(--tlbg);border-radius:10px;margin-top:10px;color:var(--mute)}
+.tst b{color:var(--tl);margin-right:4px}
+.tsh{margin:18px 0 2px;font-size:1.1rem}
+.tsp{margin:0 0 10px;font-size:.88rem}
+.tlh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:6px}
+.tlh .btn{margin-left:auto}
+.tcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.tc{position:relative;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:8px;cursor:pointer;color:var(--ink)}
+.tc.sel{border-color:var(--tl);box-shadow:0 0 0 2px var(--tl)}
+.tch{display:flex;gap:12px;align-items:flex-start}
+.av{flex:none;width:42px;height:42px;border-radius:50%;background:var(--tlbg);color:var(--tl);display:grid;place-items:center;font-weight:800}
+.tc.sel .av{background:var(--tl);color:#fff}
+.tci{display:grid;gap:1px;min-width:0;flex:1}
+.tci small{color:var(--mute)}
+.tag{justify-self:start;background:var(--tlbg);color:var(--tl);border-radius:6px;padding:1px 8px;font-weight:700;font-size:.78rem;margin-top:3px}
+.bd{flex:none;background:var(--tl);color:#fff;border-radius:6px;padding:1px 9px;font-size:.78rem;font-weight:700}
+.bd.ok{background:var(--t0)}
+.tpl{display:flex;justify-content:space-between;color:var(--mute);font-size:.85rem}
+.tprog{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.tprog i{display:block;height:100%;background:var(--tl)}
+.tbt{display:flex;gap:6px}
+.tadd{border-style:dashed;color:var(--tl);font-weight:700;place-items:center;align-content:center;min-height:110px}
+.tl{position:relative;display:grid;gap:12px;padding-left:48px;margin-top:10px}
+.tl::before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:2px;background:var(--line)}
+.ts{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.ts.cur{border:2px solid var(--tl);padding:13px 15px}
+.tn{position:absolute;left:-48px;top:12px;width:38px;height:38px;border-radius:50%;background:var(--panel);border:2px solid var(--line);display:grid;place-items:center;font-weight:700;color:var(--mute)}
+.ts.cur .tn{border-color:var(--tl);color:var(--tl)}
+.ts.ok .tn{background:var(--t0);border-color:var(--t0);color:#fff}
+.tsh2{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.wk{border:1px solid var(--line);border-radius:6px;padding:1px 9px;font-weight:600;font-size:.8rem}
+.chev{margin-left:auto;background:none;border:0;font-size:1rem;color:var(--mute);padding:2px 8px}
+.ts h4{margin:8px 0 4px;font-size:1.02rem}
+.sd{margin:0 0 4px;color:var(--mute)}
+.sc{color:var(--mute)}
+.sact{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+.dng{color:var(--c3)}
+.lz{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;gap:6px 10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.ck{width:18px;height:18px;margin-top:2px;accent-color:var(--tl)}
+.ty{border-radius:6px;padding:1px 9px;font-size:.78rem;font-weight:700;background:var(--tlbg);color:var(--tl)}
+.ty.practice{background:rgba(242,106,15,.14);color:var(--c2)}
+.lt{display:grid;gap:2px;min-width:0}
+.lt small{color:var(--mute)}
+.lm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end;color:var(--mute);font-size:.82rem}
+.fl{grid-column:2/-1;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fi{display:inline-flex;gap:6px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 4px 1px 8px;font-size:.82rem}
+.fi a{color:var(--tl)}
+.fi .x{padding:0 4px}
+.lf .full{grid-column:1/-1}
+.lf textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px;resize:vertical}
+@media (max-width:640px){.lz{grid-template-columns:auto auto minmax(0,1fr)}.lm{grid-column:2/-1;justify-content:flex-start}}
+[hidden]{display:none!important}
+.lz{grid-template-columns:auto minmax(0,1fr) auto}
+.lc{display:grid;gap:4px;min-width:0}
+.lc small{color:var(--mute)}
+.lm{justify-content:flex-start}
+.fl{grid-column:auto}
+.asx{display:flex;gap:8px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:190px;cursor:pointer}
+.asx.dis{opacity:.55;cursor:default}
+.asx small{display:block;color:var(--mute)}
+.asx input{width:18px;height:18px;accent-color:var(--tl)}
+@media (max-width:640px){.lz{grid-template-columns:auto minmax(0,1fr)}.asx{grid-column:2}}
+.dv{margin-top:16px}
+.dv h4{margin:0 0 6px;font-size:1rem}
+.dv h5{margin:12px 0 6px;font-size:.88rem;color:var(--mute)}
+.dvp{margin:0 0 6px;color:var(--mute);font-size:.88rem}
+.dvl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.dvi{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:.86rem}
+.dvi img,.dvi .rph{display:block;width:34px;height:24px;object-fit:cover;border-radius:3px;background:rgba(128,128,128,.15)}
+.dvi small{display:block;color:var(--mute)}
+.dvi>b{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -188,7 +280,7 @@ thead th.eq img{display:block;width:76px;height:56px;max-width:none;max-height:n
   <div class="legend"><b>WORK READINESS STATUS</b><div id="lg"></div></div>
  </section>
  <div class="bar">
-  <div class="tabs"><button class="btn" id="tM" aria-pressed="true">Skill Matrix</button><button class="btn" id="tR" aria-pressed="false">Radar Cards</button><button class="btn" id="tS" aria-pressed="false">Machine Summary</button><button class="btn" id="tL" aria-pressed="false">Machine Location</button></div>
+  <div class="tabs"><button class="btn" id="tM" aria-pressed="true">Skill Matrix</button><button class="btn" id="tR" aria-pressed="false">Radar Cards</button><button class="btn" id="tS" aria-pressed="false">Machine Summary</button><button class="btn" id="tL" aria-pressed="false">Machine Location</button><button class="btn" id="tT" aria-pressed="false">New-hire Training</button></div>
   <div class="tools">
   <span class="sv" id="sv"></span>
   <button class="btn" id="bEdit">✎ Edit</button>
@@ -209,6 +301,16 @@ thead th.eq img{display:block;width:76px;height:56px;max-width:none;max-height:n
   <div class="lcard" id="ld">Click a machine on the map to see its details.</div>
   <div class="allm" id="am"></div>
  </section>
+ <section id="vT" hidden>
+  <div class="hero" id="tHero"><div id="tAct"></div><span class="chip" id="tChip"></span><h2 id="tTitle"></h2><p id="tSub"></p></div>
+  <div class="tinfo" id="tInfo"></div>
+  <div class="tst" id="tSt"></div>
+  <h3 class="tsh">Trainees &amp; assigned equipment</h3>
+  <p class="tsp">Click a trainee to see their progress. The timeline below follows the selected trainee.</p>
+  <div class="tcs" id="tCs"></div>
+  <div class="tlh"><h3 class="tsh">Stage timeline</h3><span class="tsp">Tick the lessons the selected trainee has passed, and attach files to a lesson.</span><button class="btn" id="bSa" data-sa="1" hidden>+ Stage</button></div>
+  <div class="tl" id="tl"></div>
+ </section>
  <section class="foot" id="ft">
   <div class="note"><b>Note: <button class="btn" id="bNote">✎ Edit note</button></b><ul id="nl"></ul><textarea id="nT" hidden aria-label="Note, one line per bullet" placeholder="One line per bullet"></textarea></div>
   <div class="team"><h2>TEAM SUMMARY</h2><div class="kp" id="kp"></div></div>
@@ -227,7 +329,11 @@ thead th.eq img{display:block;width:76px;height:56px;max-width:none;max-height:n
  <div class="acts"><span><button class="btn" id="cReset">Reset settings</button> <button class="btn" id="cData">Restore Excel data</button></span><span><button class="btn" id="cCancel">Cancel</button> <button class="btn pri" id="cSave">Save</button></span></div>
 </div></dialog>
 <dialog id="pv"><div class="dlg"><h2>Matrix image</h2><p>Right-click (or long-press) the image and choose Save image.</p><div style="overflow:auto;max-height:60vh"><img id="pvI" alt="Skill matrix" style="max-width:none;width:1400px"></div><div class="acts"><span></span><button class="btn" onclick="document.getElementById('pv').close()">Close</button></div></div></dialog>
-<dialog id="rd"><div class="dlg"><h2 id="rdT"></h2><div id="rdS"></div><div id="rdV"></div><div class="acts"><span></span><button class="btn" onclick="document.getElementById('rd').close()">Close</button></div></div></dialog>
+<dialog id="rd"><div class="dlg"><h2 id="rdT"></h2><div id="rdS"></div><div id="rdV"></div><div id="rdL"></div><div class="acts"><span></span><button class="btn" onclick="document.getElementById('rd').close()">Close</button></div></div></dialog>
+<datalist id="dlp"></datalist>
+<dialog id="fm"><div class="dlg"><h2 id="fmT"></h2><div class="lf" id="fmB"></div><div class="acts"><span></span><span><button class="btn" id="fmC">Cancel</button> <button class="btn pri" id="fmS">Save</button></span></div></div></dialog>
+<input type="file" id="fAtt" multiple accept="image/*,video/mp4,video/webm,application/pdf,.csv,.md,.json,.txt" hidden>
+<input type="file" id="fBan" accept="image/*" hidden>
 <input type="file" id="fImg" accept="image/*" hidden>
 <div class="toast" id="toast" role="status"></div>
 
@@ -287,7 +393,7 @@ function render(){var S=stats(),cj=edit?D.eq.map(function(_,j){return j}):VJ(),c
  $("sub").textContent=C.sub;
  var th=[["≥"+C.r+"%",0],[C.s+"–"+(C.r-1)+"%",1],[C.t+"–"+(C.s-1)+"%",2],["<"+C.t+"%",3]];
  $("lg").innerHTML=th.map(function(x){return '<span><i class="dot" style="background:var(--t'+x[1]+')"></i>'+NM[x[1]]+' ('+x[0]+')</span>'}).join("");
- summary();if(view==="R")renderRadar();if(view==="S")renderMS()}
+ summary();if(view==="R")renderRadar();if(view==="S")renderMS();if(view==="T")renderTrain()}
 function updateRow(i){var row=$("tbl").querySelector('tr[data-r="'+i+'"]');if(!row)return;var p=D.p[i],a=avg(pv(p)),t=tier(a);
  var o=row.querySelector(".ov");o.textContent=(a*100).toFixed(1)+"%";o.className="ov c"+t;
  row.querySelector(".pf").innerHTML=chart(pv(p));row.querySelector(".stc").innerHTML=badge(t);row.querySelector(".du").textContent=dur(p.j);
@@ -437,7 +543,12 @@ $("rg").addEventListener("click",function(e){var b=e.target.closest(".rc");if(!b
  var c=RC.filter(function(x){return x.i===+b.dataset.ri})[0];if(!c)return;var a=avg(c.v),t=tier(a);
  $("rdT").textContent=c.n+(c.id?" ("+c.id+")":"");
  $("rdS").innerHTML='<div class="rs"><strong class="c'+t+'">'+(a*100).toFixed(1)+'%</strong>'+badge(t)+'</div>';
- $("rdV").innerHTML=radar(c.v,520,true);$("rd").showModal()});
+ $("rdV").innerHTML=radar(c.v,520,true);
+ var vj=VJ(),rows=c.v.map(function(v,k){return{j:vj[k],v:v}}).sort(function(x,y){return y.v-x.v}),L="";
+ if(rows.length){var mx=rows[0].v,best=rows.filter(function(r){return r.v===mx}),nm=best.slice(0,3).map(function(r){return esc(D.eq[r.j].n)}).join(", ")+(best.length>3?" +"+(best.length-3)+" more":"");
+  L='<p class="top">'+(c.i<0?"Best machine on average: ":"Strongest machine: ")+'<b>'+nm+'</b> ('+Math.round(mx*100)+'%)</p><ul class="rl">'+rows.map(function(r){var e=D.eq[r.j],s=imgSrc(e),tt=tier(r.v);
+   return '<li class="rli'+(r.v===mx?" best":"")+'">'+(s?'<img src="'+esc(s)+'" alt="">':'<span class="rph"></span>')+'<span class="rn">'+(r.v===mx?"★ ":"")+esc(e.n)+'</span><span class="rb"><i style="width:'+Math.min(100,r.v*100)+'%;background:var(--t'+tt+')"></i></span><b class="c'+tt+'">'+Math.round(r.v*100)+'%</b></li>'}).join("")+'</ul>'}
+ $("rdL").innerHTML=L+devHtml(c,rows,a);$("rd").showModal()});
 
 var DB=null,AS=null,CAN=true,dirty={d:0,c:0,l:0},ktimer=0,busy=false,retry=0,lastD="",lastC="",lastL="",ledit=false,drag=null,LK="wbm-v2-copy-loc";
 var LOC={"sites":[{"name":"Terahop 5000 Saraburi","W":7953.7,"H":5638.7,"floor":[[2996.9,249.3,107.4,68.0],[2996.9,612.0,107.4,68.0],[2996.9,838.7,107.4,68.0],[2996.9,1224.0,107.4,68.0],[2996.9,3377.3,107.4,68.0],[2996.9,5162.7,107.4,68.0],[3496.6,249.3,1878.8,136.0],[3496.6,5094.7,1878.8,136.0],[2766.1,317.3,338.2,68.0],[2766.1,680.0,338.2,68.0],[2766.1,770.7,338.2,68.0],[2766.1,1156.0,338.2,68.0],[2766.1,3445.3,338.2,68.0],[2766.1,5094.7,338.2,68.0],[2766.1,385.3,2609.3,158.7],[2766.1,997.3,2609.3,158.7],[2766.1,1382.7,2609.3,158.7],[2766.1,5072.0,2609.3,22.7],[107.4,612.0,2443.8,158.7],[107.4,1382.7,2443.8,158.7],[107.4,1813.3,2443.8,158.7],[107.4,2992.0,2443.8,158.7],[107.4,3377.3,2443.8,158.7],[107.4,4057.3,2443.8,32.0],[107.4,4550.7,2443.8,158.7],[107.4,5321.3,2443.8,158.7],[3496.6,612.0,2523.4,136.0],[2766.1,748.0,3253.9,22.7],[107.4,770.7,1457.0,68.0],[107.4,1541.3,1457.0,68.0],[107.4,3536.0,1457.0,68.0],[107.4,4369.3,1457.0,22.7],[1982.2,770.7,107.4,136.0],[1982.2,1541.3,107.4,136.0],[1982.2,3536.0,107.4,136.0],[2443.8,770.7,107.4,136.0],[2443.8,1541.3,107.4,136.0],[2443.8,3536.0,107.4,136.0],[3496.6,770.7,107.4,136.0],[3496.6,1156.0,107.4,136.0],[3496.6,3377.3,107.4,136.0],[3986.8,770.7,123.3,136.0],[3986.8,3377.3,123.3,136.0],[4486.5,770.7,107.4,136.0],[4486.5,3377.3,107.4,136.0],[4970.3,770.7,107.4,136.0],[4970.3,3377.3,107.4,136.0],[5482.8,770.7,107.4,136.0],[5482.8,3377.3,107.4,136.0],[5912.5,770.7,107.4,136.0],[322.3,838.7,1242.2,68.0],[322.3,1609.3,1242.2,68.0],[322.3,3604.0,1242.2,68.0],[322.3,4392.0,1242.2,68.0],[3986.8,1156.0,338.2,136.0],[4701.4,1156.0,136.1,136.0],[5267.9,1156.0,107.4,136.0],[5267.9,1541.3,107.4,136.0],[5267.9,4936.0,107.4,136.0],[2766.1,1541.3,2071.4,68.0],[2996.9,1609.3,1840.6,68.0],[107.4,1972.0,322.3,68.0],[107.4,2357.3,322.3,68.0],[107.4,2652.0,322.3,68.0],[107.4,2765.3,322.3,68.0],[752.0,1972.0,597.6,136.0],[1671.9,1972.0,879.3,136.0],[322.3,2040.0,107.4,68.0],[322.3,2425.3,107.4,68.0],[322.3,2584.0,107.4,68.0],[322.3,2833.3,107.4,68.0],[107.4,2198.7,4110.1,158.7],[107.4,2720.0,4110.1,45.3],[752.0,2357.3,2014.1,136.0],[3104.3,2357.3,107.4,136.0],[3104.3,2765.3,107.4,136.0],[3604.0,2357.3,107.4,136.0],[3604.0,2765.3,107.4,136.0],[4110.1,2357.3,107.4,136.0],[4110.1,2765.3,107.4,136.0],[752.0,2584.0,1799.2,136.0],[2889.4,2584.0,1328.1,136.0],[752.0,2765.3,1075.1,136.0],[2197.1,2765.3,107.4,136.0],[2658.7,2765.3,107.4,136.0],[107.4,3150.7,859.4,68.0],[1349.6,3150.7,107.4,136.0],[1827.1,3150.7,724.1,136.0],[1827.1,5480.0,724.1,136.0],[322.3,3218.7,644.6,68.0],[2766.1,3513.3,2824.1,181.3],[214.9,4089.3,2336.4,200.0],[214.9,4289.3,1349.6,80.0],[1982.2,4289.3,569.0,170.7],[107.4,4709.3,752.0,68.0],[1181.7,4709.3,167.9,136.0],[1671.9,4709.3,155.2,136.0],[2197.1,4709.3,354.1,136.0],[322.3,4777.3,537.1,68.0],[2996.9,4936.0,607.1,68.0],[3986.8,4936.0,230.8,136.0],[4593.9,4936.0,243.5,136.0],[2766.1,5004.0,837.9,68.0],[107.4,5480.0,429.7,68.0],[859.4,5480.0,597.6,136.0],[322.3,5548.0,214.9,68.0]],"items":[{"x":107.4,"y":2833.3,"w":214.9,"h":68.0,"ref":"B126:C128","f":"#747474","k":"br","n":"BR-19"},{"x":2089.7,"y":3536.0,"w":354.1,"h":136.0,"ref":"S157:U162","f":"#f6c6ac","k":"m","n":"AXXON GLUE #2","a":"4071513","s":"EZDBJ2602001","v":"AXXON"},{"x":1349.6,"y":4709.3,"w":322.3,"h":136.0,"ref":"M204:O209","f":"#0099ff","k":"m","n":"LQ 1 .0 #2","a":"4021734","s":"EWYTP2500004","v":"LQ"},{"x":2551.2,"y":2584.0,"w":338.2,"h":136.0,"ref":"W115:Y120","f":"#ffc000","k":"m","n":"CK ISO Sorting #2","a":"4089942","s":"EAQWE2600001","v":"CK"},{"x":2766.1,"y":1609.3,"w":230.8,"h":68.0,"ref":"Y72:Z74","f":"#747474","k":"br","n":"BR-22"},{"x":107.4,"y":2040.0,"w":214.9,"h":68.0,"ref":"B91:C93","f":"#747474","k":"br","n":"BR- 27"},{"x":429.7,"y":2584.0,"w":322.3,"h":136.0,"ref":"E115:G120","f":"#00cc99","k":"m","n":"ENG2.5 #1","a":"4071382","s":"EWYTP2600001","v":"ENG"},{"x":0,"y":3377.3,"w":107.4,"h":204.0,"ref":"A150:A158","f":"#ff0000","k":"en","n":"Entrance"},{"x":2089.7,"y":770.7,"w":354.1,"h":136.0,"ref":"S35:U40","f":"#ceebf6","k":"m","n":"CK bang pi #4","a":"4004679","s":"EFAZZ2400453","v":"CK"},{"x":4837.4,"y":4936.0,"w":430.5,"h":136.0,"ref":"AP214:AR219","f":"#0099ff","k":"m","n":"LQ COC #1","a":"4032680","s":"EALS22600001","v":"LQ"},{"x":966.9,"y":3150.7,"w":382.7,"h":136.0,"ref":"J140:L145","f":"#f6c6ac","k":"m","n":"AXXON COVER #3","a":"4013979","s":"EZDFG2500007","v":"AXXON"},{"x":1457.0,"y":3150.7,"w":370.0,"h":136.0,"ref":"N140:P145","f":"#f6c6ac","k":"m","n":"AXXON COVER #1","a":"4013980","s":"EZDFG2500008","v":"AXXON"},{"x":4837.4,"y":1156.0,"w":430.5,"h":136.0,"ref":"AP52:AR57","f":"#f6c6ac","k":"m","n":"AXXON ALN #3","a":"4014064","s":"EZDDJ2500024","v":"AXXON"},{"x":1457.0,"y":5480.0,"w":370.0,"h":136.0,"ref":"N238:P243","f":"#00cc99","k":"m","n":"ENG Sorting #1","a":"","s":"","v":"ENG"},{"x":1349.6,"y":1972.0,"w":322.3,"h":136.0,"ref":"M88:O93","f":"#00cc99","k":"m","n":"ENG2.0 #2","a":"4071381","s":"EWYTP2501010","v":"ENG"},{"x":107.4,"y":3218.7,"w":214.9,"h":68.0,"ref":"B143:C145","f":"#747474","k":"br","n":"BR-16"},{"x":107.4,"y":5548.0,"w":214.9,"h":68.0,"ref":"B241:C243","f":"#747474","k":"br","n":"BR-43"},{"x":4593.9,"y":770.7,"w":376.4,"h":136.0,"ref":"AN35:AP40","f":"#0099ff","k":"m","n":"LQ Heat Sink #4","a":"4013550","s":"ERCZD2500004","v":"LQ"},{"x":3104.3,"y":249.3,"w":392.3,"h":136.0,"ref":"AB12:AD17","f":"#ffc000","k":"m","n":"CK bang pi #3","a":"4004678","s":"EFAZZ2400452","v":"CK"},{"x":3104.3,"y":1156.0,"w":392.3,"h":136.0,"ref":"AB52:AD57","f":"#ceebf6","k":"m","n":"Innoleaf bang pi #2","a":"4017998","s":"ECOCS2500001","v":"Innoleaf"},{"x":429.7,"y":2357.3,"w":322.3,"h":136.0,"ref":"E105:G110","f":"#0099ff","k":"m","n":"LQ 1.0 ISO #1","a":"4014988","s":"EZDTP2400267","v":"LQ"},{"x":107.4,"y":294.7,"w":429.7,"h":158.7,"ref":"B14:E20","f":"#aeaeae","k":"tag","n":"3#-4F"},{"x":2766.1,"y":2357.3,"w":338.2,"h":136.0,"ref":"Y105:AA110","f":"#00cc99","k":"m","n":"ENG3.0 #3","a":"4074502","s":"EWYTP2601002","v":"ENG"},{"x":1827.1,"y":2765.3,"w":370.0,"h":136.0,"ref":"Q123:S128","f":"#00cc99","k":"m","n":"ENG1.0 #1","a":"4011561","s":"EWYTP2500011","v":"ENG"},{"x":2766.1,"y":3377.3,"w":230.8,"h":68.0,"ref":"Y150:Z152","f":"#747474","k":"br","n":"BR-03"},{"x":3604.0,"y":3377.3,"w":382.7,"h":136.0,"ref":"AF150:AH155","f":"#f6c6ac","k":"m","n":"AXXON COVER #2","a":"4013981","s":"EZDFG2500009","v":"AXXON"},{"x":3211.7,"y":2765.3,"w":392.3,"h":136.0,"ref":"AC123:AE128","f":"#ffc000","k":"m","n":"CK ISO #1","a":"4011552","s":"EZDFG2500003","v":"CK"},{"x":107.4,"y":2584.0,"w":214.9,"h":68.0,"ref":"B115:C117","f":"#747474","k":"br","n":"BR- 20"},{"x":3211.7,"y":2357.3,"w":392.3,"h":136.0,"ref":"AC105:AE110","f":"#ffc000","k":"m","n":"CK COVER #2","a":"4022631","s":"EZDFG2502001","v":"CK"},{"x":4217.5,"y":4936.0,"w":376.4,"h":136.0,"ref":"AK214:AM219","f":"#ceebf6","k":"m","n":"Innoleaf bang pi #4","a":"4040936","s":"ECOBJ2500009","v":"Innoleaf"},{"x":2304.5,"y":2765.3,"w":354.1,"h":136.0,"ref":"U123:W128","f":"#00cc99","k":"m","n":"ENG1.0 #2","a":"40103194","s":"EZDTP2400266","v":"ENG"},{"x":3711.4,"y":2765.3,"w":398.7,"h":136.0,"ref":"AG123:AI128","f":"#ebd4e9","k":"m","n":"Huanxu Sorting #1","a":"4014915","s":"EZDBL2501001","v":"Huanxu"},{"x":0,"y":4089.3,"w":214.9,"h":280.0,"ref":"A182:B188","f":"#fb8989","k":"m","n":"Insist","a":"4071532","s":"EZLJE2600002","v":"Insist"},{"x":859.4,"y":4709.3,"w":322.3,"h":136.0,"ref":"I204:K209","f":"#0099ff","k":"m","n":"LQ COVER #3","a":"4071380","s":"EZDFG2500001","v":"LQ"},{"x":3104.3,"y":770.7,"w":392.3,"h":136.0,"ref":"AB35:AD40","f":"#0099ff","k":"m","n":"LQ Heat Sink #1","a":"4013551","s":"ERCZD2500005","v":"LQ"},{"x":537.1,"y":5480.0,"w":322.3,"h":136.0,"ref":"F238:H243","f":"#0099ff","k":"m","n":"LQ COVER #2","a":"4013712","s":"EZDFG2500002","v":"LQ"},{"x":107.4,"y":4777.3,"w":214.9,"h":68.0,"ref":"B207:C209","f":"#747474","k":"br","n":"BR-45"},{"x":3604.0,"y":4936.0,"w":382.7,"h":136.0,"ref":"AF214:AH219","f":"#6ec4e5","k":"m","n":"Junion #1","a":"4021733","s":"ECOCA2501001","v":"Junion"},{"x":2551.2,"y":3989.3,"w":338.2,"h":68.0,"ref":"W177:Y179","f":"#ff0000","k":"en","n":"Entrance"},{"x":4325.0,"y":1156.0,"w":376.4,"h":136.0,"ref":"AL52:AN57","f":"#f6c6ac","k":"m","n":"AXXON ALN #4","a":"4010318","s":"EZDDJ2400127","v":"AXXON"},{"x":3104.3,"y":612.0,"w":392.3,"h":136.0,"ref":"AB28:AD33","f":"#ebd4e9","k":"m","n":"Huanxu Sorting #3","a":"4014917","s":"EZDBL2501003","v":"Huanxu"},{"x":0,"y":2901.3,"w":107.4,"h":204.0,"ref":"A129:A137","f":"#ff0000","k":"en","n":"Entrance"},{"x":107.4,"y":1609.3,"w":214.9,"h":68.0,"ref":"B72:C74","f":"#747474","k":"br","n":"BR- 28"},{"x":4110.1,"y":770.7,"w":376.4,"h":136.0,"ref":"AJ35:AL40","f":"#0099ff","k":"m","n":"LQ Heat Sink #3","a":"4014342","s":"ERCZD2500008","v":"LQ"},{"x":2766.1,"y":1224.0,"w":230.8,"h":68.0,"ref":"Y55:Z57","f":"#747474","k":"br","n":"BR- 23"},{"x":5077.8,"y":3377.3,"w":405.0,"h":136.0,"ref":"AR150:AT155","f":"#0099ff","k":"m","n":"LQ COVER #1","a":"4011551","s":"EZDFG2500004","v":"LQ"},{"x":5590.2,"y":770.7,"w":322.3,"h":136.0,"ref":"AV35:AX40","f":"#0099ff","k":"m","n":"LQ Heat Sink #6","a":"4011550","s":"ERCZD2500001","v":"LQ"},{"x":1827.1,"y":4709.3,"w":370.0,"h":136.0,"ref":"Q204:S209","f":"#ffc000","k":"m","n":"CK Sorting #1","a":"4059974","s":"EZDBL2600001","v":"CK"},{"x":0,"y":1858.7,"w":107.4,"h":204.0,"ref":"A83:A91","f":"#ff0000","k":"en","n":"Entrance"},{"x":429.7,"y":2765.3,"w":322.3,"h":136.0,"ref":"E123:G128","f":"#00cc99","k":"m","n":"ENG1.0 #4","a":"4011560","s":"EWYTP2500010","v":"ENG"},{"x":3104.3,"y":3377.3,"w":392.3,"h":136.0,"ref":"AB150:AD155","f":"#f6c6ac","k":"m","n":"AXXON COVER #5","a":"4074749","s":"EZDFG2601002","v":"AXXON"},{"x":2766.1,"y":2765.3,"w":338.2,"h":136.0,"ref":"Y123:AA128","f":"#0099ff","k":"m","n":"LQ 2.0 ISO #2","a":"4022392","s":"EWYTP2502001","v":"LQ"},{"x":1564.5,"y":4289.3,"w":417.8,"h":170.7,"ref":"O187:Q192","f":"#ceebf6","k":"m","n":"Innoleaf bang pi #3","a":"4011211","s":"ECOC12400020","v":"Innoleaf"},{"x":1564.5,"y":1541.3,"w":417.8,"h":136.0,"ref":"O69:Q74","f":"#ffc000","k":"m","n":"CK bang pi #1","a":"4014321","s":"EDAFY2400005","v":"CK"},{"x":2766.1,"y":249.3,"w":230.8,"h":68.0,"ref":"Y12:Z14","f":"#747474","k":"br","n":"BR- 26"},{"x":107.4,"y":2425.3,"w":214.9,"h":68.0,"ref":"B108:C110","f":"#747474","k":"br","n":"BR-20"},{"x":2089.7,"y":1541.3,"w":354.1,"h":136.0,"ref":"S69:U74","f":"#ceebf6","k":"m","n":"Innoleaf bang pi #1","a":"4008766","s":"EFAZZ0001740","v":"Innoleaf"},{"x":2766.1,"y":5162.7,"w":230.8,"h":68.0,"ref":"Y224:Z226","f":"#747474","k":"br","n":"BR-27"},{"x":3604.0,"y":770.7,"w":382.7,"h":136.0,"ref":"AF35:AH40","f":"#0099ff","k":"m","n":"LQ Heat Sink #2","a":"4014343","s":"ERCZD2500009","v":"LQ"},{"x":2766.1,"y":838.7,"w":230.8,"h":68.0,"ref":"Y38:Z40","f":"#747474","k":"br","n":"BR-24"},{"x":107.4,"y":4392.0,"w":214.9,"h":68.0,"ref":"B190:C192","f":"#747474","k":"br","n":"BR-46"},{"x":3104.3,"y":5094.7,"w":392.3,"h":136.0,"ref":"AB221:AD226","f":"#6ec4e5","k":"m","n":"Junion AGV #1","a":"","s":"","v":"Junion"},{"x":5077.8,"y":770.7,"w":405.0,"h":136.0,"ref":"AR35:AT40","f":"#0099ff","k":"m","n":"LQ Heat Sink #5","a":"4013206","s":"ERCZD2500002","v":"LQ"},{"x":3604.0,"y":1156.0,"w":382.7,"h":136.0,"ref":"AF52:AH57","f":"#ffc000","k":"m","n":"CK bang pi #2","a":"4003250","s":"EFAZZ0000704","v":"CK"},{"x":107.4,"y":838.7,"w":214.9,"h":68.0,"ref":"B38:C40","f":"#747474","k":"br","n":"BR- 31"},{"x":429.7,"y":1972.0,"w":322.3,"h":136.0,"ref":"E88:G93","f":"#00cc99","k":"m","n":"ENG3.0 #2","a":"4074503","s":"EWYTP2601003","v":"ENG"},{"x":4110.1,"y":3377.3,"w":376.4,"h":136.0,"ref":"AJ150:AL155","f":"#0099ff","k":"m","n":"LQ 2.0 dian kuai #1","a":"4022393","s":"EWYTP2502002","v":"LQ"},{"x":3711.4,"y":2357.3,"w":398.7,"h":136.0,"ref":"AG105:AI110","f":"#f6c6ac","k":"m","n":"AXXON COVER #4","a":"4074748","s":"EZDFG2601001","v":"AXXON"},{"x":1564.5,"y":3536.0,"w":417.8,"h":136.0,"ref":"O157:Q162","f":"#f6c6ac","k":"m","n":"AXXON GLUE #1","a":"4013981","s":"EZDFG2500009","v":"AXXON"},{"x":2766.1,"y":4936.0,"w":230.8,"h":68.0,"ref":"Y214:Z216","f":"#747474","k":"br","n":"BR-28"},{"x":4837.4,"y":1541.3,"w":430.5,"h":136.0,"ref":"AP69:AR74","f":"#fb8989","k":"m","n":"Insist ALN Sorting #1","a":"4034281","s":"EZLJE2600001","v":"Insist"},{"x":4593.9,"y":3377.3,"w":376.4,"h":136.0,"ref":"AN150:AP155","f":"#ebd4e9","k":"m","n":"Huanxu Sorting #2","a":"4014916","s":"EZDBL2501002","v":"Huanxu"},{"x":2766.1,"y":612.0,"w":230.8,"h":68.0,"ref":"Y28:Z30","f":"#747474","k":"br","n":"BR-25"},{"x":4837.4,"y":4089.3,"w":537.9,"h":280.0,"ref":"AP182:AS188","f":"#aeaeae","k":"tag","n":"2#-1F PSM8"},{"x":107.4,"y":3604.0,"w":107.4,"h":22.7,"ref":"B160","f":"#747474","k":"br","n":"BR-07"}],"legend":[{"n":"Junion","f":"#6ec4e5"},{"n":"Innoleaf","f":"#ceebf6"},{"n":"LQ","f":"#0099ff"},{"n":"ENG","f":"#00cc99"},{"n":"CK","f":"#ffc000"},{"n":"Insist","f":"#fb8989"},{"n":"Huanxu","f":"#ebd4e9"},{"n":"AXXON","f":"#f6c6ac"}]},{"name":"Pinewave 5001","W":3330.3,"H":1541.3,"floor":[[107.4,249.3,2256.0,158.7],[107.4,793.3,2256.0,22.7],[107.4,408.0,1396.6,68.0],[1826.3,408.0,107.4,136.0],[2256.0,408.0,107.4,136.0],[2256.0,657.3,107.4,136.0],[2256.0,816.0,107.4,136.0],[322.3,476.0,1181.7,68.0],[322.3,657.3,1611.4,68.0],[107.4,725.3,1826.3,68.0],[107.4,816.0,1289.2,68.0],[1718.9,816.0,214.9,136.0],[322.3,884.0,1074.3,68.0]],"items":[{"x":1933.7,"y":657.3,"w":322.3,"h":136.0,"ref":"S30:U35","f":"#f6c6ac","k":"m","n":"AXXON COVER #1","a":"4000260","s":"EZDFG2501005","v":"AXXON"},{"x":1504.0,"y":408.0,"w":322.3,"h":136.0,"ref":"O19:Q24","f":"#00cc99","k":"m","n":"ENG3.0 #1","a":"4074501","s":"EWYTP2601001","v":"ENG"},{"x":107.4,"y":657.3,"w":214.9,"h":68.0,"ref":"B30:C32","f":"#747474","k":"br","n":"BR-20"},{"x":1933.7,"y":408.0,"w":322.3,"h":136.0,"ref":"S19:U24","f":"#00cc99","k":"m","n":"ENG 2.0 #1","a":"4015789","s":"EWYTP2501004","v":"ENG"},{"x":107.4,"y":884.0,"w":214.9,"h":68.0,"ref":"B40:C42","f":"#747474","k":"br","n":"BR-19"},{"x":1396.6,"y":816.0,"w":322.3,"h":136.0,"ref":"N37:P42","f":"#ffc000","k":"m","n":"CK bang pi #1","a":"4044413","s":"ECOBJ2500024","v":"CK"},{"x":0,"y":1314.7,"w":107.4,"h":204.0,"ref":"A59:A67","f":"#ff0000","k":"en","n":"Entrance"},{"x":107.4,"y":476.0,"w":214.9,"h":68.0,"ref":"B22:C24","f":"#747474","k":"br","n":"BR-20"}],"legend":[{"n":"AXXON","f":"#f6c6ac"},{"n":"CK","f":"#ffc000"},{"n":"ENG","f":"#00cc99"}]},{"name":"Terahop Ayutthaya","W":3917.6,"H":2244.0,"floor":[[364.3,249.3,1700.0,68.0],[2428.6,249.3,274.7,136.0],[121.4,317.3,1942.9,68.0],[121.4,385.3,2581.9,158.7],[121.4,770.7,2581.9,22.7],[121.4,1020.0,2581.9,158.7],[121.4,1405.3,2581.9,158.7],[121.4,1926.7,2581.9,158.7],[364.3,634.7,1335.7,68.0],[2064.3,634.7,121.4,136.0],[2581.9,634.7,121.4,136.0],[2581.9,1564.0,121.4,136.0],[2581.9,1790.7,121.4,136.0],[121.4,702.7,1578.6,68.0],[121.4,793.3,1092.9,68.0],[1578.6,793.3,121.4,136.0],[2064.3,793.3,639.0,136.0],[364.3,861.3,850.0,68.0],[121.4,1178.7,1821.4,68.0],[2307.2,1178.7,396.1,136.0],[364.3,1246.7,1578.6,68.0],[121.4,1564.0,2064.3,68.0],[121.4,1858.7,2064.3,68.0],[364.3,1632.0,1821.4,68.0],[364.3,1790.7,1821.4,68.0]],"items":[{"x":2185.7,"y":1790.7,"w":396.1,"h":136.0,"ref":"S80:U85","f":"#00cc99","k":"m","n":"ENG Pad Mouting #1","a":"4095581","s":"EWYTP2602011","v":"ENG"},{"x":121.4,"y":1246.7,"w":242.9,"h":68.0,"ref":"B56:C58","f":"#747474","k":"br","n":"BR-50"},{"x":1821.4,"y":2153.3,"w":364.3,"h":68.0,"ref":"P96:R98","f":"#ff0000","k":"en","n":"Entrance"},{"x":2185.7,"y":634.7,"w":396.1,"h":136.0,"ref":"S29:U34","f":"#00cc99","k":"m","n":"ENG 2.0 #1","a":"4095582","s":"EWYTP2602012","v":"ENG"},{"x":121.4,"y":249.3,"w":242.9,"h":68.0,"ref":"B12:C14","f":"#747474","k":"br","n":"BR-47"},{"x":121.4,"y":861.3,"w":242.9,"h":68.0,"ref":"B39:C41","f":"#747474","k":"br","n":"BR-49"},{"x":121.4,"y":1632.0,"w":242.9,"h":68.0,"ref":"B73:C75","f":"#747474","k":"br","n":"BR-53"},{"x":1942.9,"y":1178.7,"w":364.3,"h":136.0,"ref":"Q53:S58","f":"#ceebf6","k":"m","n":"Innoleaf bang pi #2","a":"4015407","s":"EDSPZ2500001","v":"Innoleaf"},{"x":1214.3,"y":793.3,"w":364.3,"h":136.0,"ref":"K36:M41","f":"#f6c6ac","k":"m","n":"AXXON COVER #2","a":"4095762","s":"EZDFG2600009","v":"AXXON"},{"x":121.4,"y":634.7,"w":242.9,"h":68.0,"ref":"B29:C31","f":"#747474","k":"br","n":"BR-48"},{"x":1700.0,"y":793.3,"w":364.3,"h":136.0,"ref":"O36:Q41","f":"#ffc000","k":"m","n":"CK #1","a":"4095522","s":"EZDBL2602003","v":"CK"},{"x":2185.7,"y":1564.0,"w":396.1,"h":136.0,"ref":"S70:U75","f":"#f6c6ac","k":"m","n":"AXXON COVER #1","a":"4095763","s":"EZDFG2600010","v":"AXXON"},{"x":1700.0,"y":634.7,"w":364.3,"h":136.0,"ref":"O29:Q34","f":"#00cc99","k":"m","n":"ENG 2.0 #2","a":"4095747","s":"EWYTP2501005","v":"ENG"},{"x":2064.3,"y":249.3,"w":364.3,"h":136.0,"ref":"R12:T17","f":"#ceebf6","k":"m","n":"Innoleaf bang pi #1","a":"4095741","s":"ECOCS2600002","v":"Innoleaf"},{"x":121.4,"y":1790.7,"w":242.9,"h":68.0,"ref":"B80:C82","f":"#747474","k":"br","n":"BR-53"}],"legend":[{"n":"CK","f":"#ffc000"},{"n":"ENG","f":"#00cc99"},{"n":"AXXON","f":"#f6c6ac"},{"n":"Innoleaf","f":"#ceebf6"}]}],"all":[["ISO-LQ-(1.0)",2],["ISO-LQ-(2.0)",1],["ISO-ENG-(1.0)",3],["ISO-ENG-(2.0)",4],["ISO-ENG-(2.5)",1],["ISO-ENG-(3.0)",3],["Pad Mounting-ENG-(2.0)",1],["Pad Mounting-LQ-(2.0)",1],["BOSA-LQ",3],["BOSA-Axxon",3],["COVER-Axxon",5],["COVER-CK-(1.0)",1],["COVER-CK-(2.0)",1],["ALN-LQ",6],["Dispensing-Axxon-(ALN)",5],["Dispensing-Axxon-(OB)",3],["Material preparation-HX",3],["Material preparation ALN-YST",2],["Material preparation ISO-CK",3],["Material preparation ENG Cover",1],["SN Batch Binding-CK",5],["SN Batch Binding-INNO",5],["Junion coc",1],["AGV Robot",1],["LQ COC",1]]},lsite=0,lz=0,lf="",lqs="",lsel=-1;
@@ -452,7 +563,7 @@ function dataUrlToBlob(u){var p=u.split(","),m=/data:([^;]+)/.exec(p[0]),b=atob(
 async function moveImages(){if(!AS)return;for(var j=0;j<D.eq.length;j++){var e=D.eq[j];if(e.img&&e.img.indexOf("data:")===0&&!e.iid){var r=await AS.upload(dataUrlToBlob(e.img));e.iid=r.id;e.img=""}}}
 async function flush(){
  ktimer=0;
- try{localStorage.setItem(DK,JSON.stringify(D));localStorage.setItem(KEY,JSON.stringify(C));localStorage.setItem(LK,locJson())}catch(e){}
+ try{localStorage.setItem(DK,JSON.stringify(D));localStorage.setItem(KEY,JSON.stringify(C));localStorage.setItem(LK,locJson());localStorage.setItem(TK,JSON.stringify(T))}catch(e){}
  if(!DB){setStatus("Saved in this browser only","w");return}
  if(busy){kick();return}
  busy=true;
@@ -460,6 +571,7 @@ async function flush(){
   if(dirty.d){await moveImages();dirty.d=0;lastD=JSON.stringify(D);await DB.doc("matrix/data").set({json:lastD,at:Date.now()})}
   if(dirty.c){dirty.c=0;lastC=cfgJson();await DB.doc("matrix/config").set({json:lastC,at:Date.now()})}
   if(dirty.l){dirty.l=0;lastL=locJson();await DB.doc("matrix/loc").set({json:lastL,at:Date.now()})}
+  if(dirty.t){dirty.t=0;lastT=JSON.stringify(T);await DB.doc("matrix/train").set({json:lastT,at:Date.now()})}
   retry=0;setStatus("Saved to cloud","");
  }catch(e){
   if(e&&e.code==="invalid_argument"){CAN=false;applyRole();setStatus("View only: changes are not saved","e");toast("You have view-only access, so changes were not saved.")}
@@ -482,10 +594,12 @@ async function initCloud(){
   if(cs.exists){var c=JSON.parse(cs.data().json);var th=C.theme;C=Object.assign(clone(DEF),c);C.theme=th;lastC=cs.data().json}
   var ls=await DB.doc("matrix/loc").get();
   if(ls.exists){applyLoc(JSON.parse(ls.data().json));lastL=ls.data().json}
+  var ts=await DB.doc("matrix/train").get();
+  if(ts.exists){applyT(JSON.parse(ts.data().json));lastT=ts.data().json}
   setStatus(CAN?"Saved to cloud":"View only","")
  }catch(e){setStatus("Cloud unavailable. Saved in this browser only","w");DB=null}
  applyRole();render();renderNote();
- if(DB){subscribe();subscribeLoc()}}
+ if(DB){subscribe();subscribeLoc();subscribeTrain()}}
 function subscribe(){
  DB.doc("matrix/data").onSnapshot(function(s){if(!s.exists||s.metadata.hasPendingWrites)return;var j=s.data().json;if(j===lastD||ktimer||busy)return;
   var ae=document.activeElement;if(ae&&ae.tagName==="INPUT"&&$("tbl").contains(ae))return;
@@ -538,11 +652,31 @@ $("zI").onclick=function(){lz=Math.min(1.5,lz*1.25);drawMap()};
 $("zO").onclick=function(){lz=Math.max(.1,lz/1.25);drawMap()};
 $("zF").onclick=function(){lz=0;renderLoc(true)};
 
-function showView(v){view=v;var ids={M:"vM",R:"vR",S:"vS",L:"vL"},tb={M:"tM",R:"tR",S:"tS",L:"tL"};
+function devHtml(c,rows,a){
+ if(!rows.length)return"";
+ var R=C.r,thumb=function(j){var s=imgSrc(D.eq[j]);return s?'<img src="'+esc(s)+'" alt="">':'<span class="rph"></span>'};
+ var item=function(j,v,sub,tail){return'<li class="dvi">'+thumb(j)+'<span><b>'+esc(D.eq[j].n)+"</b><small>"+sub+'</small></span><b class="c'+tier(v)+'">'+tail+"</b></li>"};
+ var h='<div class="dv"><h4>'+(c.i<0?"Team gaps":"Areas to develop")+"</h4>";
+ if(c.i>=0){
+  var gap=R-a*100,below=rows.filter(function(r){return r.v*100<R-1e-9}),
+   qw=below.filter(function(r){return R-r.v*100<=10}).sort(function(x,y){return y.v-x.v}),
+   low=below.slice().sort(function(x,y){return x.v-y.v}).slice(0,5);
+  h+='<p class="dvp">'+(gap>0?"Overall is "+(a*100).toFixed(1)+"%, about "+gap.toFixed(1)+" points below the Ready level ("+R+"%).":"Overall is at the Ready level. Keep widening coverage on the machines below.")+"</p>";
+  if(qw.length)h+="<h5>Quick wins (within 10 points of Ready)</h5><ul class=\"dvl\">"+qw.map(function(r){return item(r.j,r.v,"Next: work independently and pass the assessment","+"+(R-r.v*100).toFixed(0)+" pts")}).join("")+"</ul>";
+  if(low.length)h+="<h5>Needs the most development</h5><ul class=\"dvl\">"+low.map(function(r){var t=tier(r.v),tg=t===3?C.t:t===2?C.s:R,act=t===3?"Start with a supervised session with a trainer":t===2?"Practise on the job with a trainer checking the work":"Work independently and prepare for the assessment";return item(r.j,r.v,act,Math.round(r.v*100)+"% → "+tg+"%")}).join("")+"</ul>";
+  if(!below.length)h+='<p class="dvp">Every machine is at the Ready level. Consider coaching others or learning another machine.</p>'
+ }else{
+  var vi=VI(),vj=VJ(),cov=vj.map(function(j,k){return{j:j,n:vi.filter(function(i){return (D.p[i].v[j]||0)*100>=R-1e-9}).length,v:c.v[k]}}),
+   risk=cov.filter(function(x){return x.n<2}).sort(function(x,y){return x.n-y.n||x.v-y.v});
+  if(risk.length)h+="<h5>Coverage risk (fewer than 2 technicians at Ready)</h5><ul class=\"dvl\">"+risk.slice(0,8).map(function(x){return item(x.j,x.v,x.n?"Only "+x.n+" technician at Ready":"No technician at Ready","avg "+Math.round(x.v*100)+"%")}).join("")+"</ul>"+(risk.length>8?'<p class="dvp">…and '+(risk.length-8)+" more machines.</p>":"");
+  else h+='<p class="dvp">Every machine has at least 2 technicians at the Ready level.</p>'
+ }
+ return h+"</div>"}
+function showView(v){view=v;var ids={M:"vM",R:"vR",S:"vS",L:"vL",T:"vT"},tb={M:"tM",R:"tR",S:"tS",L:"tL",T:"tT"};
  for(var k in ids){$(ids[k]).hidden=k!==v;$(tb[k]).setAttribute("aria-pressed",String(k===v))}
- var m=v==="M";$("bEdit").hidden=!m||!CAN;$("bPng").hidden=!m;$("bAddP").hidden=$("bAddM").hidden=!m||!edit||!CAN;$("ft").hidden=v==="L";
- if(v==="R")renderRadar();if(v==="S")renderMS();if(v==="L")renderLoc(true)}
-["M","R","S","L"].forEach(function(k){$("t"+k).onclick=function(){showView(k)}});
+ var m=v==="M";$("bEdit").hidden=!m||!CAN;$("bPng").hidden=!m;$("bAddP").hidden=$("bAddM").hidden=!m||!edit||!CAN;$("ft").hidden=v==="L"||v==="T";
+ if(v==="R")renderRadar();if(v==="S")renderMS();if(v==="L")renderLoc(true);if(v==="T")renderTrain()}
+["M","R","S","L","T"].forEach(function(k){$("t"+k).onclick=function(){showView(k)}});
 var LOC0=LOC.sites.map(function(s){return clone(s.items)});
 function locJson(){return JSON.stringify(LOC.sites.map(function(s){return s.items}))}
 function applyLoc(a){a.forEach(function(it,i){if(LOC.sites[i]&&Array.isArray(it)){LOC.sites[i].items=it;LOC.sites[i].bb=null}})}
@@ -580,6 +714,113 @@ window.addEventListener("pointermove",function(e){if(!drag)return;
  var it=LOC.sites[lsite].items[drag.i];it.x=sn(drag.ox+(e.clientX-drag.sx)/lz);it.y=sn(drag.oy+(e.clientY-drag.sy)/lz);
  drag.g.setAttribute("transform","translate("+(it.x-drag.ox)+","+(it.y-drag.oy)+")")});
 window.addEventListener("pointerup",function(){if(!drag)return;var d=drag;drag=null;if(d.moved){LOC.sites[lsite].bb=null;locSave()}drawMap()});
+
+var TK="wbm-v2-copy-train",tsel=0,tedit=false,topen={},tsnap="",fmCb=null,atL="",lastT="";
+var T0={title:"设备维修新人跟岗培训计划",chip:"8-week on-the-job training (8 周跟岗培训)",sub:"从设备基础认知到视觉系统进阶，按周递进的跟岗培训，帮助你逐步掌握机台操作与维护",period:"8 weeks",dept:"制造部-制造工程-RX制程-光学设备维修组",banner:"",bi:"",
+ trainees:[
+  {id:"t1",n:"Borarin Phanchaeng",eid:"C26H22",eq:"ENG2.0-3.0",tr:"何杰",treq:"ENG2.0-3.0",done:{},files:{}},
+  {id:"t2",n:"Kittipong Prachit",eid:"C26H1H",eq:"LQ2.0",tr:"陈明华",treq:"LQ2.0",done:{},files:{}},
+  {id:"t3",n:"Sarawoot Yoorayat",eid:"C26H0S",eq:"AXXON",tr:"Somchai W.",treq:"AXXON",done:{},files:{}}],
+ v:2,stages:[{"id":"s1","w":"第 1 周 สัปดาห์ที่ 1","t":"第一阶段：设备基础认知 ระยะที่ 1: ความรู้พื้นฐานเกี่ยวกับเครื่องจักร","d":"熟悉机台各按键功能与操作界面，建立设备整体认知 ทำความคุ้นเคยกับหน้าที่ของปุ่มต่าง ๆ บนเครื่องจักรและหน้าจอควบคุม เพื่อสร้างความเข้าใจเกี่ยวกับเครื่องจักรโดยรวม","ls":[{"id":"l1","ty":"theory","t":"设备基础认知（各按键、界面解读）ความรู้พื้นฐานเกี่ยวกับเครื่องจักร (การทำความเข้าใจปุ่มต่าง ๆ และหน้าจอการควบคุม)","d":"","dur":"1 周","tr":"何杰","as":"何杰"}]},{"id":"s2","w":"第 2-3 周 สัปดาห์ที่ 2–3","t":"第二阶段：基础操作 ระยะที่ 2: การปฏิบัติงานพื้นฐาน","d":"掌握开工流程与上下料操作，能独立应对常见报警 เรียนรู้และปฏิบัติตามขั้นตอนการเริ่มเดินเครื่อง การโหลดและนำชิ้นงานเข้า–ออกจากเครื่องจักร รวมถึงสามารถรับมือและแก้ไขปัญหาการแจ้งเตือนทั่วไปของเครื่องจักรได้ด้วยตนเอง","ls":[{"id":"l2","ty":"practice","t":"作业员开工流程与常见报警 ขั้นตอนการเริ่มปฏิบัติงานของพนักงานและการแจ้งเตือนทั่วไปของเครื่องจักร","d":"","dur":"1 周 1 สัปดาห์","tr":"工程师 Nutt","as":"何杰"},{"id":"l3","ty":"practice","t":"上下料、Tray、Fixture 与预置位置调整 การโหลดและนำชิ้นงานเข้า–ออกจากเครื่องจักร ,Tray ,Fixture และการปรับตำแหน่งตั้งต้น","d":"","dur":"1 周 1 สัปดาห์","tr":"工程师 Nutt","as":"何杰"}]},{"id":"s3","w":"第 4-6 周 สัปดาห์ที่ 4–6","t":"第三阶段：校准与部件维护 ระยะที่ 3: การสอบเทียบและการบำรุงรักษาชิ้นส่วน","d":"掌握胶水与测高校准，能独立完成关键部件更换与调试 เรียนรู้และทำความเข้าใจคาริเบรตการจ่ายกาวและการวัดความสูง พร้อมทั้งสามารถเปลี่ยนและปรับตั้งชิ้นส่วนสำคัญของเครื่องจักรได้ด้วยตนเอง","ls":[{"id":"l4","ty":"practice","t":"胶水、测高校准及异常处理 การคาริเบรตการจ่ายกาวและการวัดความสูง รวมถึงการจัดการเมื่อเกิดความผิดปกติ","d":"","dur":"1 周","tr":"工程师 Tanawat","as":"何杰"},{"id":"l5","ty":"practice","t":"吸嘴、中转台更换，取放料调试及异常处理 การเปลี่ยนหัวดูดและแท่นถ่ายโอนชิ้นงาน การปรับตั้งการหยิบและวางชิ้นงาน รวมถึงการจัดการเมื่อเกิดความผิดปกติ","d":"","dur":"2 周","tr":"工程师 Tanawat","as":"何杰"}]},{"id":"s4","w":"第 7-8 周 สัปดาห์ที่ 7–8","t":"第四阶段：视觉系统进阶 ระยะที่ 4: การเรียนรู้ระบบวิชันขั้นสูง","d":"掌握视觉系统搭建逻辑，能独立处理视觉异常 เรียนรู้และทำความเข้าใจหลักการทำงานและการตั้งค่าระบบวิชัน พร้อมทั้งสามารถตรวจสอบและแก้ไขความผิดปกติของระบบวิชันได้ด้วยตนเอง","ls":[{"id":"l6","ty":"practice","t":"视觉异常处理与视觉搭建逻辑 การจัดการความผิดปกติของระบบวิชันและหลักการตั้งค่าระบบวิชัน","d":"","dur":"2 周","tr":"工程师 陈明华","as":"何杰"}]}]};
+function loadT(){try{var o=JSON.parse(localStorage.getItem(TK));if(o&&o.stages&&o.trainees)return migT(o)}catch(e){}return clone(T0)}
+function migT(o){if(!o.v||o.v<2){o.stages=clone(T0.stages);o.v=2}return o}
+var T=loadT();
+function saveTr(){dirty.t=1;kick()}
+function applyT(o){if(o&&o.stages&&o.trainees)T=migT(o)}
+function uid(){return"x"+Math.random().toString(36).slice(2,9)}
+function subscribeTrain(){DB.doc("matrix/train").onSnapshot(function(s){if(!s.exists||s.metadata.hasPendingWrites)return;var j=s.data().json;if(j===lastT||ktimer||busy)return;
+ var ae=document.activeElement;if(ae&&ae.closest&&ae.closest("#vT")&&ae.tagName==="INPUT")return;
+ try{applyT(JSON.parse(j));lastT=j;if(view==="T")renderTrain()}catch(e){}},function(){})}
+function allLessons(){var a=[];T.stages.forEach(function(s){s.ls.forEach(function(l){a.push(l)})});return a}
+function lpass(tr,l){return !!tr.done[l.id]&&(!l.as||!!(tr.asm&&tr.asm[l.id]))}
+function stDone(tr,s){var n=0;s.ls.forEach(function(l){if(lpass(tr,l))n++});return n}
+function stPassed(tr,s){return s.ls.length>0&&stDone(tr,s)===s.ls.length}
+function curStage(tr){for(var i=0;i<T.stages.length;i++){var s=T.stages[i];if(s.ls.length&&!stPassed(tr,s))return i}return -1}
+function prog(tr){var a=allLessons(),d=0;a.forEach(function(l){if(lpass(tr,l))d++});return a.length?Math.round(d/a.length*100):0}
+function initials(n){var w=n.trim().split(/\s+/),a=w[0]||"?";return(a[0]+(w.length>1?w[1][0]:(a[1]||""))).toUpperCase()}
+function fsz(b){return b>1048576?(b/1048576).toFixed(1)+" MB":Math.max(1,Math.round(b/1024))+" KB"}
+function findL(id){for(var i=0;i<T.stages.length;i++)for(var k=0;k<T.stages[i].ls.length;k++)if(T.stages[i].ls[k].id===id)return{s:T.stages[i],l:T.stages[i].ls[k],k:k};return null}
+function findS(id){return T.stages.filter(function(s){return s.id===id})[0]}
+function openForm(title,fs,v,cb){$("fmT").textContent=title;
+ $("fmB").innerHTML=fs.map(function(f){var val=esc(v[f.k]||""),c=f.full?' class="full"':"";
+  if(f.t==="area")return"<label"+c+">"+f.l+'<textarea data-k="'+f.k+'" rows="3">'+val+"</textarea></label>";
+  if(f.t==="sel")return"<label"+c+">"+f.l+'<select data-k="'+f.k+'">'+f.o.map(function(o){return'<option value="'+o[0]+'"'+(o[0]===v[f.k]?" selected":"")+">"+o[1]+"</option>"}).join("")+"</select></label>";
+  return"<label"+c+">"+f.l+'<input type="text" data-k="'+f.k+'" value="'+val+'"'+(f.dl?' list="dlp"':"")+"></label>"}).join("");
+ fmCb=cb;$("fm").showModal();var i=$("fmB").querySelector("input,textarea");if(i)i.focus()}
+$("fmS").onclick=function(){var o={};$("fmB").querySelectorAll("[data-k]").forEach(function(el){o[el.dataset.k]=el.value.trim()});$("fm").close();if(fmCb)fmCb(o)};
+$("fmC").onclick=function(){$("fm").close()};
+var FT=[{k:"n",l:"Name",dl:1},{k:"eid",l:"Employee ID"},{k:"eq",l:"Equipment to learn"},{k:"tr",l:"Trainer",dl:1},{k:"treq",l:"Trainer’s equipment"}],
+ FS=[{k:"w",l:"Weeks (e.g. Week 2–3)",full:1},{k:"t",l:"Stage title",full:1},{k:"d",l:"Description",t:"area",full:1}],
+ FL=[{k:"ty",l:"Type",t:"sel",o:[["theory","Theory"],["practice","Practice"]]},{k:"dur",l:"Duration"},{k:"t",l:"Lesson title",full:1},{k:"d",l:"Description",t:"area",full:1},{k:"tr",l:"Trainer",dl:1},{k:"as",l:"Assessor (blank = no assessment)",dl:1}];
+function tdel(msg,fn){tsnap=JSON.stringify(T);fn();saveTr();renderTrain();toast2(msg,function(){T=JSON.parse(tsnap);saveTr();renderTrain()})}
+
+function renderTrain(){
+ if(!T.trainees[tsel])tsel=0;
+ var has=T.trainees.length>0,tr=T.trainees[tsel]||{done:{},files:{}},all=allLessons(),CE=CAN&&tedit,bs=T.bi?"/_blob/"+T.bi:T.banner;
+ $("dlp").innerHTML=D.p.map(function(p){return'<option value="'+esc(p.n)+'">'}).join("");
+ $("tHero").style.background=bs?'linear-gradient(rgba(8,28,44,.55),rgba(8,28,44,.8)),url("'+bs+'") center/cover':"";
+ $("tChip").textContent=T.chip;$("tTitle").textContent=T.title;$("tSub").textContent=T.sub;
+ $("tAct").innerHTML=CAN?'<button class="btn" data-tx="1">'+(tedit?"✔ Done":"✎ Edit plan")+"</button>"+(CE?'<button class="btn" data-pi="1">Plan info</button><button class="btn" data-bn="1">Change banner</button>'+(bs?'<button class="btn" data-bx="1">Remove banner</button>':""):""):"";
+ $("tInfo").innerHTML="<div><small>Training period</small><b>"+esc(T.period)+"</b></div><div><small>Trainees</small><b>"+T.trainees.length+" new technicians</b></div><div><small>Department</small><b>"+esc(T.dept)+"</b></div>";
+ $("tSt").innerHTML="<span><b>"+T.stages.length+"</b> stages</span><span><b>"+all.length+"</b> topics</span><span><b>"+T.trainees.length+"</b> trainees</span>";
+ $("bSa").hidden=!CE;
+ $("tCs").innerHTML=T.trainees.map(function(x,i){var p=prog(x),sel=i===tsel;
+  return'<div class="tc'+(sel?" sel":"")+'" data-tsel="'+i+'" tabindex="0" role="button" aria-label="Select '+esc(x.n)+'"><div class="tch"><span class="av">'+esc(initials(x.n))+'</span><div class="tci"><b>'+esc(x.n)+"</b><small>ID "+esc(x.eid||"–")+"</small><small>Trainer: "+esc(x.tr||"–")+(x.treq?" ("+esc(x.treq)+")":"")+"</small>"+(x.eq?'<span class="tag">'+esc(x.eq)+"</span>":"")+"</div>"+(sel?'<span class="bd">Current</span>':"")+'</div><div class="tpl"><span>Overall completion</span><span>'+p+'%</span></div><div class="tprog"><i style="width:'+p+'%"></i></div>'+(CE?'<span class="tbt"><button class="hb" data-te="'+i+'">Edit</button><button class="hb" data-td="'+i+'">Remove</button></span>':"")+"</div>"}).join("")+(CE?'<button class="tc tadd" data-ta="1">+ Trainee</button>':"");
+ var cur=curStage(tr);
+ $("tl").innerHTML=T.stages.map(function(s,si){var d=stDone(tr,s),pass=stPassed(tr,s),open=topen[s.id]===undefined?si===cur:topen[s.id];
+  var h='<div class="ts'+(si===cur?" cur":"")+(pass?" ok":"")+'"><span class="tn">'+(pass?"✓":si+1)+'</span><div class="tsh2"><span class="wk">'+esc(s.w)+"</span>"+(si===cur?'<span class="bd">Current stage</span>':"")+(pass?'<span class="bd ok">Passed</span>':"")+'<button class="chev" data-tg="'+s.id+'" aria-expanded="'+open+'" aria-label="Expand or collapse stage">'+(open?"▴":"▾")+"</button></div><h4>"+esc(s.t)+'</h4><p class="sd">'+esc(s.d)+'</p><small class="sc">'+s.ls.length+" lessons · Passed "+d+"/"+s.ls.length+"</small>";
+  if(open){
+   h+='<div class="sact">'+(CE?'<button class="btn" data-se="'+s.id+'">Edit stage</button><button class="btn" data-la="'+s.id+'">+ Lesson</button>':"")+(CAN&&has&&s.ls.length?'<button class="btn" data-sall="'+s.id+'">'+(pass?"Clear all":"Mark all passed")+"</button>":"")+(CE?'<button class="btn dng" data-sd="'+s.id+'">Delete stage</button>':"")+"</div>";
+   h+=s.ls.map(function(l){var fl=(tr.files&&tr.files[l.id])||[],dn=!!tr.done[l.id],am=!!(tr.asm&&tr.asm[l.id]),W=CAN&&has;
+    return'<div class="lz"><input type="checkbox" class="ck" data-ck="'+l.id+'"'+(dn?" checked":"")+(W?"":" disabled")+' aria-label="Completed: '+esc(l.t)+'"><div class="lc"><b>'+esc(l.t)+"</b>"+(l.d?"<small>"+esc(l.d)+"</small>":"")+'<div class="lm"><span class="ty '+l.ty+'">'+(l.ty==="practice"?"Practice 实操":"Theory 理论")+"</span>"+(l.dur?"<span>"+esc(l.dur)+"</span>":"")+(l.tr?"<span>Trainer: "+esc(l.tr)+"</span>":"")+(CE?'<button class="hb" data-le="'+l.id+'">Edit</button><button class="hb" data-ld="'+l.id+'">Delete</button>':"")+'</div><div class="fl">'+fl.map(function(f,k){return'<span class="fi"><a href="'+esc(f.iid?"/_blob/"+f.iid:f.u)+'" target="_blank" rel="noopener">'+esc(f.n)+"</a> <small>"+fsz(f.sz||0)+"</small>"+(CAN?'<button class="x" data-rf="'+l.id+":"+k+'" aria-label="Remove file">✕</button>':"")+"</span>"}).join("")+(W?'<button class="hb" data-at="'+l.id+'">+ Attach file</button>':"")+"</div></div>"+(l.as?'<label class="asx'+(W&&dn?"":" dis")+'"><input type="checkbox" data-as="'+l.id+'"'+(am?" checked":"")+(W&&dn?"":" disabled")+'><span>Assessment passed 考核通过<small>Assessor: '+esc(l.as)+"</small></span></label>":"")+"</div>"}).join("")}
+  return h+"</div>"}).join("")||'<p class="tsp">No stages yet.</p>'}
+
+function pickTrainee(i){tsel=i;renderTrain()}
+$("vT").addEventListener("click",function(e){var t=e.target,b,i;
+ if(b=t.closest("[data-tx]")){tedit=!tedit;renderTrain();return}
+ if(b=t.closest("[data-pi]")){openForm("Plan info",[{k:"title",l:"Title",full:1},{k:"chip",l:"Badge text",full:1},{k:"sub",l:"Subtitle",t:"area",full:1},{k:"period",l:"Training period"},{k:"dept",l:"Department",full:1}],T,function(o){T.title=o.title||T.title;T.chip=o.chip;T.sub=o.sub;T.period=o.period;T.dept=o.dept;saveTr();renderTrain()});return}
+ if(b=t.closest("[data-bn]")){$("fBan").click();return}
+ if(b=t.closest("[data-bx]")){T.bi="";T.banner="";saveTr();renderTrain();return}
+ if(b=t.closest("[data-te]")){i=+b.dataset.te;openForm("Edit trainee",FT,T.trainees[i],function(o){if(!o.n)return;Object.assign(T.trainees[i],o);saveTr();renderTrain()});return}
+ if(b=t.closest("[data-td]")){i=+b.dataset.td;var nm=T.trainees[i].n;tdel("Removed "+nm,function(){T.trainees.splice(i,1);if(tsel>=T.trainees.length)tsel=Math.max(0,T.trainees.length-1)});return}
+ if(b=t.closest("[data-ta]")){openForm("Add trainee",FT,{},function(o){if(!o.n)return;T.trainees.push({id:uid(),n:o.n,eid:o.eid,eq:o.eq,tr:o.tr,treq:o.treq,done:{},files:{}});tsel=T.trainees.length-1;saveTr();renderTrain()});return}
+ if(b=t.closest("[data-sa]")){openForm("Add stage",FS,{w:"Week "},function(o){if(!o.t)return;T.stages.push({id:uid(),w:o.w,t:o.t,d:o.d,ls:[]});topen[T.stages[T.stages.length-1].id]=true;saveTr();renderTrain()});return}
+ if(b=t.closest("[data-se]")){var s=findS(b.dataset.se);openForm("Edit stage",FS,s,function(o){if(!o.t)return;s.w=o.w;s.t=o.t;s.d=o.d;saveTr();renderTrain()});return}
+ if(b=t.closest("[data-sd]")){var sid=b.dataset.sd,sn=findS(sid).t;tdel("Deleted stage",function(){T.stages=T.stages.filter(function(x){return x.id!==sid})});return}
+ if(b=t.closest("[data-la]")){var s2=findS(b.dataset.la);openForm("Add lesson",FL,{ty:"theory",dur:"1 week"},function(o){if(!o.t)return;s2.ls.push({id:uid(),ty:o.ty||"theory",t:o.t,d:o.d,dur:o.dur,tr:o.tr,as:o.as});topen[s2.id]=true;saveTr();renderTrain()});return}
+ if(b=t.closest("[data-le]")){var f=findL(b.dataset.le);openForm("Edit lesson",FL,f.l,function(o){if(!o.t)return;Object.assign(f.l,o);saveTr();renderTrain()});return}
+ if(b=t.closest("[data-ld]")){var lid=b.dataset.ld;tdel("Deleted lesson",function(){var f2=findL(lid);if(f2)f2.s.ls.splice(f2.k,1)});return}
+ if(b=t.closest("[data-tg]")){var s3=findS(b.dataset.tg),cur=curStage(T.trainees[tsel]||{done:{}}),idx=T.stages.indexOf(s3),o=topen[s3.id]===undefined?idx===cur:topen[s3.id];topen[s3.id]=!o;renderTrain();return}
+ if(b=t.closest("[data-sall]")){var s4=findS(b.dataset.sall),tr=T.trainees[tsel];if(!tr)return;var all=stPassed(tr,s4);tr.asm=tr.asm||{};s4.ls.forEach(function(l){if(all){delete tr.done[l.id];delete tr.asm[l.id]}else{tr.done[l.id]=1;if(l.as)tr.asm[l.id]=1}});saveTr();renderTrain();return}
+ if(b=t.closest("[data-at]")){atL=b.dataset.at;$("fAtt").click();return}
+ if(b=t.closest("[data-rf]")){var p=b.dataset.rf.split(":"),tr2=T.trainees[tsel];if(tr2&&tr2.files[p[0]]){tr2.files[p[0]].splice(+p[1],1);saveTr();renderTrain()}return}
+ if(b=t.closest("[data-tsel]"))pickTrainee(+b.dataset.tsel)});
+$("vT").addEventListener("keydown",function(e){var b=e.target.closest&&e.target.closest("[data-tsel]");if(b&&e.target===b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();pickTrainee(+b.dataset.tsel)}});
+$("vT").addEventListener("change",function(e){var c=e.target;if(!c.dataset)return;var tr=T.trainees[tsel];if(!tr)return;tr.asm=tr.asm||{};
+ if(c.dataset.ck){if(c.checked)tr.done[c.dataset.ck]=1;else{delete tr.done[c.dataset.ck];delete tr.asm[c.dataset.ck]}}
+ else if(c.dataset.as){if(c.checked)tr.asm[c.dataset.as]=1;else delete tr.asm[c.dataset.as]}
+ else return;
+ saveTr();renderTrain()});
+function readDU(f){return new Promise(function(res,rej){var r=new FileReader();r.onload=function(){res(r.result)};r.onerror=rej;r.readAsDataURL(f)})}
+$("fAtt").onchange=async function(){var fs=[].slice.call(this.files),lid=atL,tr=T.trainees[tsel];this.value="";if(!fs.length||!tr||!lid)return;
+ setStatus("Uploading file…","w");var ok=0;
+ for(var i=0;i<fs.length;i++){var f=fs[i],ent=null;
+  try{
+   if(AS){var ext=(f.name.split(".").pop()||"").toLowerCase(),tm={csv:"text/csv",md:"text/markdown",json:"application/json",txt:"text/plain"},r=await AS.upload(f,tm[ext]?{type:tm[ext]}:undefined);ent={n:f.name,iid:r.id,sz:r.sizeBytes}}
+   else if(f.size<=200000){ent={n:f.name,u:await readDU(f),sz:f.size}}
+   else{toast("File storage is not available here, so “"+f.name+"” was not attached.");continue}
+   (tr.files[lid]=tr.files[lid]||[]).push(ent);ok++
+  }catch(er){var c=er&&er.code;toast(c==="unsupported_type"?"“"+f.name+"” is not a supported type. Use an image, PDF, MP4/WebM video, CSV, Markdown, JSON or text file.":c==="too_large"?"“"+f.name+"” is too large (limit 20 MB).":c==="quota_or_state"?"File storage is full.":c==="not_granted"?"You do not have permission to upload files.":"Could not upload “"+f.name+"”.")}
+ }
+ if(ok){saveTr();renderTrain();toast(ok+" file"+(ok>1?"s":"")+" attached")}else setStatus(DB?"Saved to cloud":"Saved in this browser only","")};
+$("fBan").onchange=function(){var f=this.files[0];this.value="";if(!f)return;var fr=new FileReader();
+ fr.onload=function(){var im=new Image();
+  im.onload=function(){var m=AS?1400:800,s=Math.min(1,m/im.width),c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+   c.toBlob(function(b){if(!b)return;
+    if(AS){AS.upload(b).then(function(r){T.bi=r.id;T.banner="";saveTr();renderTrain()}).catch(function(){toast("Could not upload the banner")})}
+    else{var f2=new FileReader();f2.onload=function(){T.banner=f2.result;T.bi="";saveTr();renderTrain()};f2.readAsDataURL(b)}},"image/jpeg",AS?.82:.6)};
+  im.onerror=function(){toast("Could not read that image")};im.src=fr.result};
+ fr.readAsDataURL(f)};
 renderNote();
 render();
 initCloud();
