@@ -277,6 +277,7 @@ thead th.eq img{display:block;width:76px;height:56px;max-width:none;max-height:n
 .phc small{display:block;color:var(--mute)}
 .phc.miss{border-style:dashed}
 button.phc{cursor:pointer}
+.vh{position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
 </style>
 </head>
 <body>
@@ -349,10 +350,10 @@ button.phc{cursor:pointer}
 <dialog id="rd"><div class="dlg"><h2 id="rdT"></h2><div id="rdS"></div><div id="rdV"></div><div id="rdL"></div><div class="acts"><span></span><button class="btn" onclick="document.getElementById('rd').close()">Close</button></div></div></dialog>
 <datalist id="dlp"></datalist>
 <dialog id="fm"><div class="dlg"><h2 id="fmT"></h2><div class="lf" id="fmB"></div><div class="acts"><span></span><span><button class="btn" id="fmC">Cancel</button> <button class="btn pri" id="fmS">Save</button></span></div></div></dialog>
-<input type="file" id="fAtt" multiple accept="image/*,video/mp4,video/webm,application/pdf,.csv,.md,.json,.txt" hidden>
-<input type="file" id="fBan" accept="image/*" hidden>
-<input type="file" id="fLph" accept="image/*" hidden>
-<input type="file" id="fImg" accept="image/*" hidden>
+<input type="file" id="fAtt" multiple accept="image/*,video/mp4,video/webm,application/pdf,.csv,.md,.json,.txt" class="vh" tabindex="-1" aria-hidden="true">
+<input type="file" id="fBan" accept="image/*" class="vh" tabindex="-1" aria-hidden="true">
+<input type="file" id="fLph" accept="image/*" class="vh" tabindex="-1" aria-hidden="true">
+<input type="file" id="fImg" accept="image/*" class="vh" tabindex="-1" aria-hidden="true">
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -451,8 +452,7 @@ $("fImg").onchange=function(){var f=this.files[0];this.value="";if(!f||imgJ<0)re
   im.onload=function(){var m=170,s=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));
    c.getContext("2d").drawImage(im,0,0,c.width,c.height);
    c.toBlob(function(b){if(!b||!D.eq[j])return;setStatus("Uploading photo…","w");
-    if(AS){AS.upload(b).then(function(r){if(!D.eq[j])return;D.eq[j].iid=r.id;D.eq[j].img="";saveD();render();toast("Photo saved")}).catch(function(){setStatus("Photo not saved","e");toast("Could not upload the photo")})}
-    else{var f2=new FileReader();f2.onload=function(){if(!D.eq[j])return;D.eq[j].img=f2.result;D.eq[j].iid="";saveD();render();toast("Photo added")};f2.readAsDataURL(b)}
+    putImage(b).then(function(o){if(!D.eq[j])return;if(o.iid){D.eq[j].iid=o.iid;D.eq[j].img=""}else{D.eq[j].img=o.img;D.eq[j].iid=""}saveD();render();toast(upMsg(o))}).catch(function(er){setStatus("Photo not saved","e");toast("Could not add the photo"+(er&&er.code?" ("+er.code+")":""))})
    },"image/webp",.82)};
   im.onerror=function(){toast("Could not read that image")};im.src=fr.result};
  fr.onerror=function(){toast("Could not read that file")};fr.readAsDataURL(f)};
@@ -475,6 +475,9 @@ $("cSave").onclick=function(){var r=+$("fR").value,s=+$("fS").value,t=+$("fT").v
  if(!(r>s&&s>t&&t>0)){toast("Use Ready > Supervised > Training > 0");return}
  C.sub=$("fSub").value.trim()||DEF.sub;C.r=r;C.s=s;C.t=t;save();render();$("cfg").close();toast("Saved")};
 
+function putImage(b){var inl=function(er){return new Promise(function(res,rej){if(b.size>200000)return rej(er||{code:"too_large"});var fr=new FileReader();fr.onload=function(){res({img:fr.result,fb:(er&&er.code)||(AS?"upload_failed":"no_assets")})};fr.onerror=rej;fr.readAsDataURL(b)})};
+ if(!AS)return inl(null);return AS.upload(b).then(function(r){return{iid:r.id}},function(er){return inl(er)})}
+function upMsg(o){return o.fb&&o.fb!=="no_assets"?"Photo added. File storage refused the upload ("+o.fb+"), so it is kept inside the page data.":"Photo saved"}
 function toDataUrl(src){if(src.indexOf("data:")===0)return Promise.resolve(src);return fetch(src).then(function(r){return r.blob()}).then(function(b){return new Promise(function(res,rej){var fr=new FileReader();fr.onload=function(){res(fr.result)};fr.onerror=rej;fr.readAsDataURL(b)})})}
 function loadImgs(){return Promise.all(D.eq.map(function(e){var s=imgSrc(e);return new Promise(function(res){if(!s)return res(null);toDataUrl(s).then(function(u){var im=new Image();im.onload=function(){res(im)};im.onerror=function(){res(null)};im.src=u}).catch(function(){res(null)})})}))}
 $("bPng").onclick=async function(){
@@ -885,15 +888,14 @@ $("fAtt").onchange=async function(){var fs=[].slice.call(this.files),lid=atL,tr=
    else if(f.size<=200000){ent={n:f.name,u:await readDU(f),sz:f.size}}
    else{toast("File storage is not available here, so “"+f.name+"” was not attached.");continue}
    (tr.files[lid]=tr.files[lid]||[]).push(ent);ok++
-  }catch(er){var c=er&&er.code;toast(c==="unsupported_type"?"“"+f.name+"” is not a supported type. Use an image, PDF, MP4/WebM video, CSV, Markdown, JSON or text file.":c==="too_large"?"“"+f.name+"” is too large (limit 20 MB).":c==="quota_or_state"?"File storage is full.":c==="not_granted"?"You do not have permission to upload files.":"Could not upload “"+f.name+"”.")}
+  }catch(er){if(f.size<=200000){try{(tr.files[lid]=tr.files[lid]||[]).push({n:f.name,u:await readDU(f),sz:f.size});ok++;toast("File kept inside the page data because file storage refused it ("+((er&&er.code)||"error")+").");continue}catch(e2){}}var c=er&&er.code;toast(c==="unsupported_type"?"“"+f.name+"” is not a supported type. Use an image, PDF, MP4/WebM video, CSV, Markdown, JSON or text file.":c==="too_large"?"“"+f.name+"” is too large (limit 20 MB).":c==="quota_or_state"?"File storage is full.":c==="not_granted"?"You do not have permission to upload files.":"Could not upload “"+f.name+"”.")}
  }
  if(ok){saveTr();renderTrain();toast(ok+" file"+(ok>1?"s":"")+" attached")}else setStatus(DB?"Saved to cloud":"Saved in this browser only","")};
 $("fBan").onchange=function(){var f=this.files[0];this.value="";if(!f)return;var fr=new FileReader();
  fr.onload=function(){var im=new Image();
   im.onload=function(){var m=AS?1400:800,s=Math.min(1,m/im.width),c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));c.getContext("2d").drawImage(im,0,0,c.width,c.height);
    c.toBlob(function(b){if(!b)return;
-    if(AS){AS.upload(b).then(function(r){T.bi=r.id;T.banner="";saveTr();renderTrain()}).catch(function(){toast("Could not upload the banner")})}
-    else{var f2=new FileReader();f2.onload=function(){T.banner=f2.result;T.bi="";saveTr();renderTrain()};f2.readAsDataURL(b)}},"image/jpeg",AS?.82:.6)};
+    putImage(b).then(function(o){if(o.iid){T.bi=o.iid;T.banner=""}else{T.banner=o.img;T.bi=""}saveTr();renderTrain();if(o.fb&&o.fb!=="no_assets")toast(upMsg(o))}).catch(function(er){toast("Could not add the banner"+(er&&er.code?" ("+er.code+")":""))})},"image/jpeg",.7)};
   im.onerror=function(){toast("Could not read that image")};im.src=fr.result};
  fr.readAsDataURL(f)};
 var LRULES=[["ENG无源贴装 1.0",/^eng1\.0\b/],["ENG无源贴装 2.0~3.0",/^eng ?(2\.0|2\.5|3\.0)\b/],["猎奇无源贴装 1.0",/^lq 1 ?\.0/],["猎奇无源贴装 2.0",/^lq 2\.0 iso/],["猎奇热沉贴装",/^lq heat sink/],["猎奇封盖封装",/^lq cover/],["猎奇治具组装",/^lq coc/],["创凯封盖封装1.0",/^ck iso #/],["创凯封盖封装2.0",/^ck cover/],["创凯备料机",/^ck (iso )?sorting/],["轴心封盖封装",/^axxon cover/],["轴心点胶机",/^axxon glue/],["恒旭备料机",/^huanxu sorting/],["因斯特备料机",/^insist\b/],["玖物移栽",/^junion #/],["ENG 备料机",/^eng sorting/],["创凯SN绑批",/^ck bang pi/],["光驰SN绑批",/^innoleaf bang pi/]],lphK="";
@@ -912,18 +914,18 @@ function renderPhs(){var G={},order=[];
  LOC.sites.forEach(function(s){s.items.forEach(function(it){if(it.k!=="m")return;var p=lphoto(it),t=p.t,e=G[t.key];if(!e){e=G[t.key]={t:t,n:0,src:p.src,own:p.own};order.push(t.key)}e.n++;if(!e.src&&p.src){e.src=p.src;e.own=p.own}})});
  var keys=order.map(function(k){return G[k]}),ok=keys.filter(function(e){return e.src}).length;
  keys.sort(function(a,b){return(a.src?1:0)-(b.src?1:0)||a.t.label.localeCompare(b.t.label)});
- $("phs").innerHTML="<h3>Machine photos</h3><p>"+ok+" of "+keys.length+" machine types have a photo. Photos are linked from the Skill Matrix by machine name; types with a dashed outline have no photo yet"+(CAN?" — click one to add yours.":".")+'</p><div class="phg">'+keys.map(function(e){
+ $("phs").innerHTML="<h3>Machine photos</h3><p>"+ok+" of "+keys.length+" machine types have a photo. Photos are linked from the Skill Matrix by machine name; types with a dashed outline have no photo yet"+(CAN?". Click any machine type to add or replace its photo.":".")+'</p><div class="phg">'+keys.map(function(e){
   var inner=(e.src?'<img src="'+esc(e.src)+'" alt="">':'<span class="phn">+</span>')+"<span><b>"+esc(e.t.label)+"</b><small>"+e.n+" machine"+(e.n===1?"":"s")+(e.src?(e.own?" · custom photo":" · linked"):" · no photo")+"</small></span>";
-  return e.src||!CAN?'<div class="phc'+(e.src?"":" miss")+'">'+inner+"</div>":'<button class="phc miss" data-lph="'+esc(e.t.key)+'">'+inner+"</button>"}).join("")+"</div>"}
+  return CAN?'<button class="phc'+(e.src?"":" miss")+'" data-lph="'+esc(e.t.key)+'" title="'+(e.src?"Replace photo":"Add photo")+'">'+inner+"</button>":'<div class="phc'+(e.src?"":" miss")+'">'+inner+"</div>"}).join("")+"</div>"}
 $("vL").addEventListener("click",function(e){var b=e.target.closest("[data-lph],[data-lpx]");if(!b||!CAN)return;
  if(b.dataset.lph!==undefined){lphK=b.dataset.lph;$("fLph").click()}
  else{delete LOC.tp[b.dataset.lpx];locSave();drawMap();renderPhs();showLD()}});
 $("fLph").onchange=function(){var f=this.files[0],key=lphK;this.value="";if(!f||!key)return;var fr=new FileReader();
  fr.onload=function(){var im=new Image();
   im.onload=function(){var s=Math.min(1,320/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.max(1,Math.round(im.width*s));c.height=Math.max(1,Math.round(im.height*s));c.getContext("2d").drawImage(im,0,0,c.width,c.height);
-   c.toBlob(function(b){if(!b)return;var done=function(o){LOC.tp[key]=o;locSave();drawMap();renderPhs();showLD();toast("Photo saved")};
-    if(AS)AS.upload(b).then(function(r){done({iid:r.id})}).catch(function(){toast("Could not upload the photo")});
-    else{var f2=new FileReader();f2.onload=function(){done({img:f2.result})};f2.readAsDataURL(b)}},"image/webp",.82)};
+   c.toBlob(function(b){if(!b)return;
+    putImage(b).then(function(o){LOC.tp[key]=o.iid?{iid:o.iid}:{img:o.img};locSave();drawMap();renderPhs();showLD();toast(upMsg(o))}).catch(function(er){toast("Could not add the photo"+(er&&er.code?" ("+er.code+")":""))})
+   },"image/webp",.82)};
   im.onerror=function(){toast("Could not read that image")};im.src=fr.result};
  fr.readAsDataURL(f)};
 renderNote();
